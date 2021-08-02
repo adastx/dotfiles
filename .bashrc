@@ -108,6 +108,7 @@ fi
 alias mv='mv -i'
 alias rm='rm -i'
 alias gs='git status'
+alias cs='config status'
 
 
 # enable programmable completion features (you don't need to enable
