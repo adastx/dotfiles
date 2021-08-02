@@ -105,12 +105,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias mv='mv -i'
-alias rm='rm -i'
-alias gs='git status'
-alias cs='config status'
-
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -122,12 +116,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 # ANTLR
 export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.9.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
-# Shell prompt
-export PS1='\[\033[33m\]adamski\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ '
+export EDITOR=vim
+export VISUAL=vim
+export PS1='\[\033[33m\]adamski\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
 
+alias mv='mv -i'
+alias rm='rm -i'
+alias gs='git status'
+alias cs='config status'
 alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
