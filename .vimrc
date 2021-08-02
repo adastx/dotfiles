@@ -163,7 +163,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 colorscheme default
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLine cterm=NONE ctermbg=16 ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=Yellow
 set cursorline
 
