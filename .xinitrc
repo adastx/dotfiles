@@ -50,5 +50,6 @@ fi
 
 nitrogen --restore &
 greenclip daemon &
+polybar bar1 &
 picom &
 exec i3
