@@ -15,7 +15,7 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+space exec rofi -show run 
 bindsym $mod+Ctrl+space exec rofi -show window 
-bindsym $mod+Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # kill focused window
 
