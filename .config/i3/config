@@ -1,22 +1,23 @@
 set $mod Mod4
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec alacritty
-
-# start firefox
-bindsym $mod+b exec firefox
-
-# kill focused window
+# i3 reload cfg / restart i3 / exit i3
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+q kill
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+b exec firefox
+bindsym $mod+e exec pcmanfm
 
 # rofi/drun
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+space exec rofi -show run 
 bindsym $mod+Ctrl+space exec rofi -show window 
 bindsym $mod+Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# kill focused window
 
 # change focus
 bindsym $mod+h focus left
@@ -86,10 +87,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# i3 reload cfg / restart i3 / exit i3
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "Resize Mode" {
     bindsym h resize shrink width 6 px or 6 ppt
@@ -133,8 +130,6 @@ hide_edge_borders smart
 popup_during_fullscreen smart
 focus_follows_mouse no
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:monospace 6
 
 
