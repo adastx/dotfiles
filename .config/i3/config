@@ -12,10 +12,10 @@ bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 
 # rofi/drun
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+space exec rofi -show run 
-bindsym $mod+Ctrl+space exec rofi -show window 
-bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+d exec rofi -show drun -show-icons -theme rofi
+bindsym $mod+Shift+space exec rofi -show run -show-icons -theme rofi
+bindsym $mod+Ctrl+space exec rofi -show window -show-icons -theme rofi
+bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -show-icons -theme rofi
 
 # kill focused window
 
