@@ -169,3 +169,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Switch keyboard layout 
+exec --no-startup-id setxkbmap -option grp:win_space_toggle us,dk
