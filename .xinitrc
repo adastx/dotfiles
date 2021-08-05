@@ -47,10 +47,3 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
-
-nitrogen --restore &
-greenclip daemon &
-pulseaudio --daemonize &
-polybar bar1 &
-picom &
-exec i3
