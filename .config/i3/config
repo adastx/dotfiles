@@ -159,16 +159,6 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 
-##### Misc/Exec
+##### Exec
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id greenclip daemon
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Switch keyboard layout 
-exec --no-startup-id setxkbmap -option grp:win_space_toggle us,dk
