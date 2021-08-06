@@ -18,14 +18,16 @@ bindsym $mod+f fullscreen toggle
 
 # Rofi
 bindsym $mod+d exec rofi -show drun -show-icons -theme rofi
-bindsym $mod+Shift+space exec rofi -show run -show-icons -theme rofi
-bindsym $mod+Ctrl+space exec rofi -show window -show-icons -theme rofi
+bindsym $mod+Tab exec rofi -show window -show-icons -theme rofi
 bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -show-icons -theme rofi
 
-# PulseAudio
-bindsym XF86AudioRaiseVolume pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute pactl set-sink-mute @DEFAULT_SINK@ toggle
+# Media keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Change focus
 bindsym $mod+h focus left
@@ -87,13 +89,13 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 mode "Resize Mode" {
     bindsym h resize shrink width 6 px or 6 ppt
-    bindsym j resize grow height 6 px or 6 ppt
-    bindsym k resize shrink height 6 px or 6 ppt
+    bindsym j resize shrink height 6 px or 6 ppt
+    bindsym k resize grow height 6 px or 6 ppt
     bindsym l resize grow width 6 px or 6 ppt
 
     bindsym Shift+h resize shrink width 12 px or 12 ppt
-    bindsym Shift+j resize grow height 12 px or 12 ppt
-    bindsym Shift+k resize shrink height 12 px or 12 ppt
+    bindsym Shift+j resize shrink height 12 px or 12 ppt
+    bindsym Shift+k resize grow height 12 px or 12 ppt
     bindsym Shift+l resize grow width 12 px or 12 ppt
     
     bindsym minus gaps inner current minus 6
@@ -110,12 +112,12 @@ bindsym $mod+r mode "Resize Mode"
 
 ##### Appearance
 
-font pango:monospace 6
+font pango:Source Code Pro Medium 11
 
 gaps inner 5
 gaps outer 0
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 smart_gaps on
 hide_edge_borders smart
