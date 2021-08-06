@@ -10,7 +10,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+q kill
-bindsym $mod+Escape exec betterlockscreen -l dim
+bindsym $mod+Escape exec multilockscreen -l dim --display 1 
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
@@ -20,6 +20,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+d exec rofi -show drun -show-icons -theme rofi
 bindsym $mod+Tab exec rofi -show window -show-icons -theme rofi
 bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -show-icons -theme rofi
+bindsym $mod+Shift+p exec rofi -show p -theme rofi -modi p:rofi-power-menu
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
