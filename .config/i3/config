@@ -17,8 +17,8 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 
 # Rofi
-bindsym $mod+d exec rofi -show drun -show-icons -theme rofi
-bindsym $mod+Tab exec rofi -show window -show-icons -theme rofi
+bindsym $mod+d exec rofi -show drun -show-icons -theme rofi -drun-display-format {name}
+bindsym Mod1+Tab exec rofi -show window -show-icons -theme rofi -drun-display-format {name}
 bindsym Mod1+b exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -show-icons -theme rofi
 bindsym $mod+Shift+p exec rofi -show p -theme rofi -modi p:rofi-power-menu
 
