@@ -124,7 +124,7 @@ alias grun='java org.antlr.v4.gui.TestRig'
 
 export EDITOR=vim
 export VISUAL=vim
-export PS1='\[\033[33m\]adamski\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
+export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
 
 alias mv='mv -i'
 alias rm='rm -i'
