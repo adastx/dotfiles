@@ -116,12 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# ANTLR
-export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /usr/local/lib/antlr-4.9.1-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
-
 export EDITOR=vim
 export VISUAL=vim
 export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
@@ -131,3 +125,13 @@ alias rm='rm -i'
 alias gs='git status'
 alias cs='config status'
 alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
+
+# PATH
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# ANTLR
+export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.9.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
