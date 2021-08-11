@@ -161,4 +161,5 @@ for_window [title="^Steam Keyboard$"] floating enable
 
 ##### Exec
 
+exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

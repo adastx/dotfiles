@@ -41,4 +41,9 @@ picom --config $HOME/.config/picom/picom.conf -b &
 xss-lock -l -- multilockscreen -l dim --display 1 &
 redshift -l 56:10 &
 pcmanfm -d &
-exec i3
+exec i3 & wmpid=$!
+
+sleep 5
+$HOME/.autostart &
+
+wait $wmpid
