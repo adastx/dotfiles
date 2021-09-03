@@ -1,6 +1,0 @@
-#!/bin/sh
-
-pia-client &
-gtk-launch megasync &
-gtk-launch discord &
-openrgb -p no-rgb &
