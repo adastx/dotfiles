@@ -3,7 +3,8 @@
 ;background = #10152c
 ;background = #080f1f
 background = #090809
-background-alt = #1b2f60
+background-alt = #090809
+background-alt-i3 = #1b2f60
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #254183
@@ -14,14 +15,13 @@ alert = #bd2c40
 
 
 [bar/bar1]
-monitor = DP-2
 width = 100%
 height = 25
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
 fixed-center = false
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -35,17 +35,18 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2   
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 2.5
 
-;font-0 = SFNS Display:style=Bold:size=12;3 
-font-0 = SFNS Display:style=Regular:size=13;3 
-font-1 = Font Awesome 5 Free Regular:size=12;3
-font-2 = Font Awesome 5 Free Solid:size=12;3
+font-0 = SFNS Display:style=Regular:size=14;3.5 
+font-1 = Font Awesome 5 Free Regular:size=13;3
+font-2 = Font Awesome 5 Free Solid:size=13;3
+font-3 = Font Awesome 5 Pro Solid:size=13;3
+font-4 = Font Awesome 5 Pro Regular:size=13;3
 
 modules-left = i3
 modules-center = 
-modules-right = xkeyboard pulseaudio date
+modules-right = xkeyboard pulseaudio battery date
 
 tray-position = right
 tray-padding = 2
@@ -58,53 +59,9 @@ enable-ipc = true
 
 
 
-[bar/bar2]
-monitor = DP-4.8
-width = 100%
-height = 25
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
-fixed-center = false
-bottom = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 0   
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = SFNS Display:style=Regular:size=13;3 
-font-1 = Font Awesome 5 Free Regular:size=12;3
-font-2 = Font Awesome 5 Free Solid:size=12;3
-
-modules-left = i3
-modules-center = 
-modules-right = date
-
-tray-position = none
-tray-padding = 2
-;tray-background = #0063ff
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
-
-
-
 [module/xkeyboard]
 type = internal/xkeyboard
-blacklist-0 = num lock
+;blacklist-0 = num lock
 
 ;format-prefix = "    "
 ;format-prefix-foreground = ${colors.foreground}
@@ -114,9 +71,10 @@ blacklist-0 = num lock
 label-layout = "  %layout%  "
 label-layout-background = ${colors.background-alt}
 
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-padding = 1
+label-indicator-margin = 0
+label-indicator-background = #bc99ed
+label-indicator-foreground = #000
 
 
 
@@ -135,7 +93,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background-alt-i3}
 label-focused-foreground = #f1e98a
 label-focused-underline= ${colors.primary}
 label-focused-padding = 3
@@ -159,22 +117,66 @@ label-urgent-padding = 3
 ; label-separator = |
 
 
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${colors.background-alt}
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = "    %percentage%  "
+label-charging-background = ${colors.background-alt}
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = "%percentage%  "
+label-discharging-background = ${colors.background-alt}
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = "   "
+ramp-capacity-1 = "   "
+ramp-capacity-2 = "   "
+ramp-capacity-3 = "   "
+ramp-capacity-4 = "   "
+
+
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = ""
-date-alt = " %a %b %d"
-
+date = " %a %b %d"
 time = %H:%M
-time-alt = %H:%M
 
 ;format-prefix = "   "  
 ;format-prefix-background = ${colors.background-alt}
 ;format-prefix-foreground = ${colors.foreground}
 ;format-underline = #0a6cf5
 
+;label = "   %date% %time%  " 
 label = " %date% %time%  " 
 label-background = ${colors.background-alt}
 
@@ -183,7 +185,14 @@ label-background = ${colors.background-alt}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> 
+format-volume = <label-volume>
+format-volume-background = ${colors.background-alt} 
+
+; Only applies if <ramp-volume> is used
+;ramp-volume-0 = "   "
+;ramp-volume-1 = "   "
+;ramp-volume-2 = "   "
+;ramp-volume-3 = "   "
 
 label-volume = "    %percentage%  "
 label-volume-foreground = ${root.foreground}
@@ -210,3 +219,4 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
