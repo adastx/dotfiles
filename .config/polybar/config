@@ -36,13 +36,13 @@ padding-left = 0
 padding-right = 2   
 
 module-margin-left = 0
-module-margin-right = 2.5
+module-margin-right = 5 
 
-font-0 = SFNS Display:style=Regular:size=14;3.5 
-font-1 = Font Awesome 5 Free Regular:size=13;3
-font-2 = Font Awesome 5 Free Solid:size=13;3
-font-3 = Font Awesome 5 Pro Solid:size=13;3
-font-4 = Font Awesome 5 Pro Regular:size=13;3
+font-0 = FreeSans:size=15;3
+font-1 = Font Awesome 5 Free Regular:size=14;4.5
+font-2 = Font Awesome 5 Free Solid:size=14;4.5
+font-3 = Font Awesome 5 Pro Solid:size=14;4.5
+font-4 = Font Awesome 5 Pro Regular:size=14;4.5
 
 modules-left = i3
 modules-center = 
@@ -62,16 +62,10 @@ enable-ipc = true
 [module/xkeyboard]
 type = internal/xkeyboard
 ;blacklist-0 = num lock
-
-;format-prefix = "    "
-;format-prefix-foreground = ${colors.foreground}
-;format-prefix-background = ${colors.background-alt}
-
-;label-layout = "%layout%  "
-label-layout = "  %layout%  "
+label-layout = "%layout% "
 label-layout-background = ${colors.background-alt}
 
-label-indicator-padding = 1
+label-indicator-padding = 2
 label-indicator-margin = 0
 label-indicator-background = #bc99ed
 label-indicator-foreground = #000
@@ -144,23 +138,28 @@ format-discharging-background = ${colors.background-alt}
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = "    %percentage%  "
+label-charging = "  %percentage%"
 label-charging-background = ${colors.background-alt}
+
+format-full = <ramp-capacity> <label-full>
+format-full-background = ${colors.background-alt}
+label-full = "%percentage%"
+label-full-background = ${colors.background-alt} 
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
-label-discharging = "%percentage%  "
+label-discharging = "%percentage%"
 label-discharging-background = ${colors.background-alt}
 
 ; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "   "
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 
 
 
@@ -168,16 +167,13 @@ ramp-capacity-4 = "   "
 type = internal/date
 interval = 5
 
-date = " %a %b %d"
-time = %H:%M
+date = ""
+date-alt = "%a %b %d "
 
-;format-prefix = "   "  
-;format-prefix-background = ${colors.background-alt}
-;format-prefix-foreground = ${colors.foreground}
-;format-underline = #0a6cf5
+time = "%H:%M"
+time-alt = "%H:%M"
 
-;label = "   %date% %time%  " 
-label = " %date% %time%  " 
+label = "%date%%time%  " 
 label-background = ${colors.background-alt}
 
 
@@ -188,17 +184,11 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 format-volume-background = ${colors.background-alt} 
 
-; Only applies if <ramp-volume> is used
-;ramp-volume-0 = "   "
-;ramp-volume-1 = "   "
-;ramp-volume-2 = "   "
-;ramp-volume-3 = "   "
-
-label-volume = "    %percentage%  "
+label-volume = "  %percentage%"
 label-volume-foreground = ${root.foreground}
 label-volume-background = ${colors.background-alt}
 
-label-muted = "    muted  "
+label-muted = "  muted"
 label-muted-foreground = #999
 label-muted-background = ${colors.background-alt}
 

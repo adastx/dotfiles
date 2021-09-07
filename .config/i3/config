@@ -22,9 +22,9 @@ bindsym $alt+b exec --no-startup-id rofi -modi "clipboard:greenclip print" -show
 bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --no-symbols --choices=shutdown/reboot/suspend/logout --confirm="
 bindsym $mod+p exec --no-startup-id rofi-pass  
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/custom/volume_up.sh 100
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioPlay exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
@@ -163,7 +163,7 @@ for_window [title="^Steam Keyboard$"] floating enable
 
 ##### Exec
 
-exec_always --no-startup-id /usr/bin/nm-applet
 exec_always --no-startup-id /usr/bin/unclutter -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id setxkbmap -option grp:win_space_toggle us,dk
