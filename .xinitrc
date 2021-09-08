@@ -36,10 +36,9 @@ fi
 greenclip daemon &
 playerctld daemon &
 nitrogen --restore &
-setxkbmap -option grp:win_space_toggle us,dk &
-#picom --config $HOME/.config/picom/picom.conf -b &
 redshift -l 56:10 &
 pcmanfm -d &
+nm-applet &
 exec i3 & wmpid=$!
 
 sleep 5

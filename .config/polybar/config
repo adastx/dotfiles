@@ -36,7 +36,7 @@ padding-left = 0
 padding-right = 2   
 
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 4
 
 ;font-0 = SFNS Display:style=Bold:size=12;3 
 font-0 = SFNS Display:style=Regular:size=13;3 
@@ -44,7 +44,7 @@ font-1 = Font Awesome 5 Free Regular:size=12;3
 font-2 = Font Awesome 5 Free Solid:size=12;3
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = xkeyboard pulseaudio date
 
 tray-position = right
@@ -89,7 +89,7 @@ font-2 = Font Awesome 5 Free Solid:size=12;3
 
 modules-left = i3
 modules-center = 
-modules-right = date2
+modules-right = date
 
 tray-position = none
 tray-padding = 2
@@ -110,8 +110,7 @@ blacklist-0 = num lock
 ;format-prefix-foreground = ${colors.foreground}
 ;format-prefix-background = ${colors.background-alt}
 
-;label-layout = "%layout%  "
-label-layout = "  %layout%  "
+label-layout = "%layout% "
 ;label-layout-background = ${colors.background-alt}
 
 label-indicator-padding = 2
@@ -159,26 +158,17 @@ label-urgent-padding = 3
 ; label-separator = |
 
 
-
 [module/date]
 type = internal/date
 interval = 5
 
-date = " %a %b %d"
-time = %H:%M
-label = " %date% %time%  " 
-
-[module/date2]
-type = internal/date
-interval = 5
-
 date = ""
-date-alt = " %a %b %d"
+date-alt = " %a %b %d "
 
 time = %H:%M
 time-alt = %H:%M
 
-label = " %date% %time%  " 
+label = "%date%%time%  " 
 
 
 [module/pulseaudio]
@@ -186,11 +176,11 @@ type = internal/pulseaudio
 
 format-volume = <label-volume> 
 
-label-volume = "    %percentage%  "
+label-volume = "  %percentage%"
 label-volume-foreground = ${root.foreground}
 ;label-volume-background = ${colors.background-alt}
 
-label-muted = "    muted  "
+label-muted = "  muted"
 label-muted-foreground = #999
 ;label-muted-background = ${colors.background-alt}
 
