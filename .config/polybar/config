@@ -38,10 +38,9 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 4
 
-;font-0 = SFNS Display:style=Bold:size=12;3 
-font-0 = SFNS Display:style=Regular:size=13;3 
-font-1 = Font Awesome 5 Free Regular:size=12;3
-font-2 = Font Awesome 5 Free Solid:size=12;3
+font-0 = FreeSans:style=Regular:size=15;3 
+font-1 = Font Awesome 5 Free Regular:size=14;4.5
+font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
 modules-left = i3
 modules-center =
@@ -83,9 +82,9 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = SFNS Display:style=Regular:size=13;3 
-font-1 = Font Awesome 5 Free Regular:size=12;3
-font-2 = Font Awesome 5 Free Solid:size=12;3
+font-0 = FreeSans:style=Regular:size=15;3 
+font-1 = Font Awesome 5 Free Regular:size=14;4.5
+font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
 modules-left = i3
 modules-center = 
