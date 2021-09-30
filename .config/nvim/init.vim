@@ -169,3 +169,4 @@ highlight CursorLineNr cterm=bold ctermfg=Yellow
 highlight LineNr ctermfg=Brown
 
 "------------------------------------------------------------
+
