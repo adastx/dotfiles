@@ -125,6 +125,7 @@ alias rm='rm -i'
 alias gs='git status'
 alias cs='config status'
 alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
+alias vim='nvim'
 
 # PATH
 export PATH="$HOME/bin:$PATH"
