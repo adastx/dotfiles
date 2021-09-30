@@ -96,6 +96,7 @@ set nostartofline
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
 set ruler
+set laststatus=0
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -164,8 +165,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 colorscheme default
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=Yellow
-set cursorline
+highlight CursorLineNr cterm=bold ctermfg=Yellow
+highlight LineNr ctermfg=Brown
 
 "------------------------------------------------------------
