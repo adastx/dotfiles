@@ -116,10 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
-#export PF_INFO="ascii os host kernel uptime pkgs memory"
 
 alias mv='mv -i'
 alias rm='rm -i'
@@ -137,8 +136,3 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.9.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
-
-#pfetch=$(pfetch)
-#cat << EOF
-#$pfetch
-#EOF
