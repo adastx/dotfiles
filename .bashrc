@@ -116,8 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
 
 alias mv='mv -i'
