@@ -61,14 +61,15 @@ require'lspconfig'.sumneko_lua.setup {
     },
 }
 
+-- HTML, CSS, JS (TS), BASH
+require'lspconfig'.html.setup{}
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.bashls.setup{}
+
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
     },
 }
-
-require'lspconfig'.html.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.bashls.setup{}
