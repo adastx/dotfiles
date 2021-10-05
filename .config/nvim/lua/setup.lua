@@ -18,6 +18,7 @@ set.autoindent = true
 set.expandtab = true
 set.showmode = false
 set.ruler = false
+set.cmdheight = 2
 
 vim.cmd('colorscheme gruvbox')
 vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
