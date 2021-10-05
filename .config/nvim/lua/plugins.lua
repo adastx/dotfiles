@@ -1,6 +1,8 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'gruvbox-community/gruvbox'
+    use 'tpope/vim-fugitive'
+    use 'ThePrimeagen/vim-be-good'
 
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
@@ -9,19 +11,13 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'
 
     use 'kyazdani42/nvim-web-devicons'
-
-    use {
-        'norcalli/nvim-colorizer.lua',
-        ft = { 'css', 'javascript', 'vim', 'html' },
-        config = [[require('colorizer').setup {'css', 'javascript', 'vim', 'html'}]],
-    }
+    use 'norcalli/nvim-colorizer.lua'
 
     use { 
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use 'tpope/vim-fugitive'
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -41,6 +37,4 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-
-    use 'ThePrimeagen/vim-be-good'
 end)
