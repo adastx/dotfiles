@@ -68,3 +68,5 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
 }
+
+require('kommentary.config').use_extended_mappings()

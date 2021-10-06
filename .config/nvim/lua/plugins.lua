@@ -12,6 +12,7 @@ return require('packer').startup(function()
 
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
+    use 'b3nj5m1n/kommentary'
 
     use { 
         'nvim-telescope/telescope.nvim',
