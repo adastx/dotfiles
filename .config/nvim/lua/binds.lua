@@ -9,6 +9,11 @@ map('n', '<C-L>', ':nohl<CR><C-L>', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
 
+map('n', '<leader>h', ':wincmd h<CR>', opts)
+map('n', '<leader>j', ':wincmd j<CR>', opts)
+map('n', '<leader>k', ':wincmd k<CR>', opts)
+map('n', '<leader>l', ':wincmd l<CR>', opts)
+
 map('i', 'kj', '<Esc>', opts)
 map('i', ',', ',<c-g>u', opts)
 map('i', '.', '.<c-g>u', opts)
