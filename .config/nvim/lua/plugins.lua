@@ -1,20 +1,22 @@
-return require('packer').startup(function()
+local use = require('packer').use
+require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'gruvbox-community/gruvbox'
     use 'tpope/vim-fugitive'
+    use 'tpope/vim-surround'
     use 'ThePrimeagen/vim-be-good'
-
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
-
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'b3nj5m1n/kommentary'
 
-    use { 
+    use {
         'nvim-telescope/telescope.nvim',
         requires = {
             {'nvim-lua/popup.nvim'},
@@ -35,12 +37,20 @@ return require('packer').startup(function()
     }
 
     use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
+    use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+
+    use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require'nvim-tree'.setup {} end
     }
 end)
