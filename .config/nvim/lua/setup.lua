@@ -18,7 +18,6 @@ set.autoindent = true
 set.expandtab = true
 set.showmode = false
 set.ruler = false
-set.cmdheight = 2
 set.timeout = false
 set.ttimeoutlen = 200
 
