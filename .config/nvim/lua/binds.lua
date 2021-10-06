@@ -8,7 +8,6 @@ map('', 'Y', 'y$', opts)
 map('n', '<C-L>', ':nohl<CR><C-L>', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
-map('n', '<leader>sc', '~', opts)
 
 map('i', 'kj', '<Esc>', opts)
 map('i', ',', ',<c-g>u', opts)
