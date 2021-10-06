@@ -20,6 +20,7 @@ set.showmode = false
 set.ruler = false
 set.timeout = false
 set.ttimeoutlen = 200
+set.wrap = false
 
 vim.cmd('colorscheme gruvbox')
 vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
