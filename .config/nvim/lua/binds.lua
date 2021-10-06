@@ -13,6 +13,7 @@ map('n', '<leader>h', ':wincmd h<CR>', opts)
 map('n', '<leader>j', ':wincmd j<CR>', opts)
 map('n', '<leader>k', ':wincmd k<CR>', opts)
 map('n', '<leader>l', ':wincmd l<CR>', opts)
+map('n', '<leader>pv', ':30Lex<CR>', opts) -- open simple file explorer
 
 map('i', 'kj', '<Esc>', opts)
 map('i', ',', ',<c-g>u', opts)
@@ -20,6 +21,11 @@ map('i', '.', '.<c-g>u', opts)
 map('i', '[', '[<c-g>u', opts)
 map('i', '!', '!<c-g>u', opts)
 map('i', '?', '?<c-g>u', opts)
+
+map('n', '<C-p>', '<cmd>Telescope find_files<cr>', opts)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 
 map('n', '<leader>fu', '<cmd>Telescope lsp_references<cr>', opts)
 map('n', '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', opts)
