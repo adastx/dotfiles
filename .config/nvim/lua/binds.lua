@@ -25,3 +25,6 @@ map('n', '<leader>xn', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 map('n', '<leader>xN', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
 map('n', '<leader>xx', '<cmd>Telescope lsp_code_actions<cr>', opts)
 map('n', '<leader>xX', '<cmd>Telescope lsp_range_code_actions<cr>', opts)
+
+map('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
+map('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
