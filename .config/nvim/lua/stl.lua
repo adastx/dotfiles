@@ -1,10 +1,10 @@
 require'lualine'.setup {
     options = {
         icons_enabled = true,
-        theme = 'gruvbox',
+        theme = 'codedark',
         component_separators = {'', ''},
         section_separators = {'', ''},
-        disabled_filetypes = {}
+        disabled_filetypes = {'startify', 'NvimTree'}
     },
     sections = {
         lualine_a = {'mode'},
