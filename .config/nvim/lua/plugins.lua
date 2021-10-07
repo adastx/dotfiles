@@ -2,6 +2,7 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'gruvbox-community/gruvbox'
+    use 'tomasiser/vim-code-dark'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
     use 'ThePrimeagen/vim-be-good'
@@ -15,6 +16,7 @@ require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'b3nj5m1n/kommentary'
+    use 'mhinz/vim-startify'
 
     use {
         'nvim-telescope/telescope.nvim',
