@@ -8,6 +8,16 @@ map('', 'Y', 'y$', opts)
 map('n', '<C-L>', ':nohl<CR><C-L>', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
+map('i', 'kj', '<Esc>', opts)
+
+map('i', ',', ',<c-g>u', opts)
+map('i', '.', '.<c-g>u', opts)
+map('i', '[', '[<c-g>u', opts)
+map('i', '!', '!<c-g>u', opts)
+map('i', '?', '?<c-g>u', opts)
+
+map('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
+map('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
 
 map('n', '<leader>h', ':wincmd h<CR>', opts)
 map('n', '<leader>j', ':wincmd j<CR>', opts)
@@ -16,13 +26,6 @@ map('n', '<leader>l', ':wincmd l<CR>', opts)
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
-
-map('i', 'kj', '<Esc>', opts)
-map('i', ',', ',<c-g>u', opts)
-map('i', '.', '.<c-g>u', opts)
-map('i', '[', '[<c-g>u', opts)
-map('i', '!', '!<c-g>u', opts)
-map('i', '?', '?<c-g>u', opts)
 
 map('n', '<C-p>', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
@@ -38,6 +41,3 @@ map('n', '<leader>xn', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 map('n', '<leader>xN', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
 map('n', '<leader>xx', '<cmd>Telescope lsp_code_actions<cr>', opts)
 map('n', '<leader>xX', '<cmd>Telescope lsp_range_code_actions<cr>', opts)
-
-map('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
-map('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
