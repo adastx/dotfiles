@@ -1,4 +1,3 @@
--- SNIPPETS
 local nvim_lsp = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -11,14 +10,23 @@ for _, lsp in ipairs(servers) do
 end
 
 vim.o.completeopt = 'menuone,noselect'
-local luasnip = require 'luasnip'
 
 -- CMP
 local cmp = require 'cmp'
+
+local t = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col(".") - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
+end
+
 cmp.setup {
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
     mapping = {
@@ -26,34 +34,35 @@ cmp.setup {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
-        ['<Tab>'] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
-            elseif luasnip.expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
+                vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
+            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+                vim.fn.feedkeys(t("<ESC>:call UltiSnips#JumpForwards()<CR>"))
+            elseif vim.fn.pumvisible() == 1 then
+                vim.fn.feedkeys(t("<C-n>"), "n")
             else
                 fallback()
             end
-        end,
-        ['<S-Tab>'] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
-            elseif luasnip.jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+        end, { "i", "s", }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+                return vim.fn.feedkeys(t("<ESC>:call UltiSnips#JumpBackwards()<CR>"))
+            elseif vim.fn.pumvisible() == 1 then
+                vim.fn.feedkeys(t("<C-p>"), "n")
             else
                 fallback()
             end
-        end,
+        end, { "i", "s", }),
     },
     sources = {
+        { name = 'ultisnips' },
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
     },
 }
 

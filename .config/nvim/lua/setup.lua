@@ -25,6 +25,7 @@ set.timeout = false
 set.ttimeoutlen = 200
 set.wrap = false
 set.fcs = 'eob: '
+set.swapfile = false
 
 vim.cmd('colorscheme codedark')
 vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
