@@ -11,8 +11,6 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'L3MON4D3/LuaSnip'
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'b3nj5m1n/kommentary'
@@ -21,11 +19,22 @@ require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-telescope/telescope-fzy-native.nvim'},
-            {'BurntSushi/ripgrep'}
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzy-native.nvim',
+            'BurntSushi/ripgrep'
         }
+    }
+
+    use {
+        "SirVer/ultisnips",
+        requires = {
+            "honza/vim-snippets",
+            "quangnguyen30192/cmp-nvim-ultisnips"
+        },
+        config = function()
+            vim.g.UltiSnipsRemoveSelectModeMappings = 0
+        end,
     }
 
     use {
