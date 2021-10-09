@@ -40,12 +40,8 @@ cmp.setup {
             select = true,
         },
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-                vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
-            elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+            if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
                 vim.fn.feedkeys(t("<ESC>:call UltiSnips#JumpForwards()<CR>"))
-            elseif vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(t("<C-n>"), "n")
             else
                 fallback()
             end
@@ -53,8 +49,6 @@ cmp.setup {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
                 return vim.fn.feedkeys(t("<ESC>:call UltiSnips#JumpBackwards()<CR>"))
-            elseif vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(t("<C-p>"), "n")
             else
                 fallback()
             end
