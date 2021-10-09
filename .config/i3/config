@@ -1,12 +1,10 @@
 ##### i3 config
-
 set $mod Mod4
 set $alt Mod1
 floating_modifier $mod
 
 
 ##### Bindings 
-
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q kill
@@ -117,7 +115,6 @@ bindsym $mod+r mode "Resize Mode"
 
 
 ##### Appearance
-
 font pango:Source Code Pro Medium 11
 
 gaps inner 5
@@ -132,7 +129,6 @@ focus_follows_mouse no
 
 
 ##### Force floating windows
-
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -165,7 +161,6 @@ for_window [title="^Steam Keyboard$"] floating enable
 
 
 ##### Exec
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b 
 exec_always --no-startup-id setxkbmap -option grp:win_space_toggle us,dk 

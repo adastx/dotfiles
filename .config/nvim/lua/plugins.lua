@@ -15,7 +15,6 @@ require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'b3nj5m1n/kommentary'
     use 'mhinz/vim-startify'
-    use 'windwp/nvim-autopairs'
 
     use {
         'nvim-telescope/telescope.nvim',
