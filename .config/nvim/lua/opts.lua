@@ -18,11 +18,6 @@ local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local check_back_space = function()
-    local col = vim.fn.col(".") - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
-end
-
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -55,8 +50,9 @@ cmp.setup {
         end, { "i", "s", }),
     },
     sources = {
-        { name = 'ultisnips' },
         { name = 'nvim_lsp' },
+        { name = 'ultisnips' },
+        { name = 'buffer' },
     },
 }
 
