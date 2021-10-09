@@ -112,4 +112,3 @@ require'nvim-treesitter.configs'.setup {
 -- Misc
 require('kommentary.config').use_extended_mappings()
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
-require('nvim-autopairs').setup{}
