@@ -43,3 +43,4 @@ let g:ascii = [
             \ '',
             \] 
 let g:startify_custom_header = startify#pad(g:ascii)
+" autocmd FileType markdown lua require('cmp').setup.buffer { enabled = false }
