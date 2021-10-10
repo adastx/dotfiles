@@ -111,7 +111,7 @@ require'nvim-treesitter.configs'.setup {
 
 require("toggleterm").setup{
     -- size can be a number or function which is passed the current terminal
-    size = 75,
+    size = 65,
     open_mapping = [[<c-\>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers
     persist_size = true,
