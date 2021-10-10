@@ -109,6 +109,16 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
+require("toggleterm").setup{
+    -- size can be a number or function which is passed the current terminal
+    size = 75,
+    open_mapping = [[<c-\>]],
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    persist_size = true,
+    direction = 'vertical',
+    close_on_exit = true, -- close the terminal window when the process exits
+}
+
 -- Misc
 require('kommentary.config').use_extended_mappings()
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
