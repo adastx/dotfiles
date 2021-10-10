@@ -16,7 +16,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id pcmanfm
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+s exec --no-startup-id screenshot
+bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/custom/screenshot
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
