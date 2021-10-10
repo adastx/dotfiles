@@ -16,6 +16,7 @@ require('packer').startup(function()
     use 'b3nj5m1n/kommentary'
     use 'mhinz/vim-startify'
     use "akinsho/toggleterm.nvim"
+    use "ray-x/lsp_signature.nvim"
 
     use {
         'nvim-telescope/telescope.nvim',
