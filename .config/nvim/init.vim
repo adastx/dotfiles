@@ -16,15 +16,7 @@ if has('persistent_undo')
 endif
 
 lua require 'init'
-
-lua << EOF
-require 'colorizer'.setup {
-    '*';
-    '!vim';
-    css = { rgb_fn = true; };
-    html = { names = false; }
-}
-EOF
+lua require 'after'
 
 let g:ascii = [
             \ '',
@@ -43,4 +35,5 @@ let g:ascii = [
             \ '',
             \] 
 let g:startify_custom_header = startify#pad(g:ascii)
+
 " autocmd FileType markdown lua require('cmp').setup.buffer { enabled = false }
