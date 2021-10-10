@@ -1,4 +1,4 @@
 #!/bin/sh
 
 sleep 0.2
-scrot -sf
+scrot -sfe 'mv $f ~/Pictures/screenshots/'
