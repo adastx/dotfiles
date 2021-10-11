@@ -27,6 +27,6 @@ set.wrap = false
 set.fcs = 'eob: '
 set.swapfile = false
 
-vim.cmd('colorscheme codedark')
+vim.cmd('colorscheme gruvbox')
 vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
 vim.cmd('highlight Normal ctermbg=none')
