@@ -14,6 +14,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+c exec gnome-control-center --class=floating_window
+bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/custom/screenshot
 
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
