@@ -96,7 +96,7 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 require'lsp_signature'.setup {
-    floating_window = false,
+    hint_enable = false
 }
 
 -- HTML, CSS, JS (TS), BASH
@@ -125,3 +125,7 @@ require("toggleterm").setup{
 -- Misc
 require('kommentary.config').use_extended_mappings()
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+require("indent_blankline").setup {
+    char = "|",
+    buftype_exclude = {"terminal"}
+}
