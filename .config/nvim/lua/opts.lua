@@ -96,22 +96,7 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 require'lsp_signature'.setup {
-    cfg = {
-        floating_window = true,
-        floating_window_above_cur_line = true,
-        fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
-        hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
-        max_height = 12,
-        max_width = 120,
-        handler_opts = {
-            border = "single"   -- double, single, shadow, none
-        },
-        extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
-        zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
-        padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
-        timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
-        toggle_key = nil -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
-    }
+    floating_window = false,
 }
 
 -- HTML, CSS, JS (TS), BASH
@@ -138,6 +123,5 @@ require("toggleterm").setup{
 }
 
 -- Misc
-require "lsp_signature".setup()
 require('kommentary.config').use_extended_mappings()
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
