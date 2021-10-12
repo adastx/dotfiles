@@ -126,6 +126,6 @@ require("toggleterm").setup{
 require('kommentary.config').use_extended_mappings()
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
 require("indent_blankline").setup {
+    buftype_exclude = {"terminal"},
     char = "|",
-    buftype_exclude = {"terminal"}
 }
