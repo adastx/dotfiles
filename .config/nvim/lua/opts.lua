@@ -96,7 +96,7 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 require'lsp_signature'.setup {
-    floating_window = false,
+    hint_enable = false,
 }
 
 -- HTML, CSS, JS (TS), BASH
@@ -124,4 +124,7 @@ require("toggleterm").setup{
 
 -- Misc
 require('kommentary.config').use_extended_mappings()
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true,
+})
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
