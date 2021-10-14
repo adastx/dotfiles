@@ -54,6 +54,7 @@ cmp.setup {
         { name = 'ultisnips' },
     },
 }
+vim.cmd('autocmd FileType markdown lua require("cmp").setup.buffer { enabled = false }')
 
 -- C#
 local pid = vim.fn.getpid()
@@ -95,17 +96,18 @@ require'lspconfig'.sumneko_lua.setup {
     },
 }
 
-require'lsp_signature'.setup {
-    hint_enable = false,
-}
-
 -- HTML, CSS, JS (TS), BASH
 require'lspconfig'.html.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.bashls.setup{}
 
--- Treesitter
+-- Misc
+
+require'lsp_signature'.setup {
+    hint_enable = false,
+}
+
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
@@ -122,9 +124,30 @@ require("toggleterm").setup{
     close_on_exit = true, -- close the terminal window when the process exits
 }
 
--- Misc
 require('kommentary.config').use_extended_mappings()
 require('kommentary.config').configure_language("default", {
     prefer_single_line_comments = true,
 })
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+
+vim.g.indentLine_bufNameExclude = {'startify', 'NvimTree', 'help', 'toggleterm', 'terminal'}
+vim.g.indentLine_bufTypeExclude = {'startify', 'NvimTree', 'help', 'toggleterm', 'terminal'}
+
+vim.cmd [[
+    let g:ascii = [
+    \ '',
+    \ '   @@@@@@   @@@@@@@    @@@@@@   @@@@@@@@@@    @@@@@@   @@@  @@@  @@@  ',
+    \ '  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@   @@@  @@@  @@@  ',
+    \ '  @@!  @@@  @@!  @@@  @@!  @@@  @@! @@! @@!  !@@       @@!  !@@  @@!  ',
+    \ '  !@!  @!@  !@!  @!@  !@!  @!@  !@! !@! !@!  !@!       !@!  @!!  !@!  ',
+    \ '  @!@!@!@!  @!@  !@!  @!@!@!@!  @!! !!@ @!@  !!@@!!    @!@@!@!   !!@  ',
+    \ '  !!!@!!!!  !@!  !!!  !!!@!!!!  !@!   ! !@!   !!@!!!   !!@!!!    !!!  ',
+    \ '  !!:  !!!  !!:  !!!  !!:  !!!  !!:     !!:       !:!  !!: :!!   !!:  ',
+    \ '  :!:  !:!  :!:  !:!  :!:  !:!  :!:     :!:      !:!   :!:  !:!  :!:  ',
+    \ '  ::   :::   :::: ::  ::   :::  :::     ::   :::: ::    ::  :::   ::  ',
+    \ '   :   : :  :: :  :    :   : :   :      :    :: : :     :   :::  :    ',
+    \ '',
+    \ '',
+    \] 
+    let g:startify_custom_header = startify#pad(g:ascii)
+]]
