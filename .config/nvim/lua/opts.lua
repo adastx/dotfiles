@@ -130,8 +130,12 @@ require('kommentary.config').configure_language("default", {
 })
 vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
 
-vim.g.indentLine_bufNameExclude = {'startify', 'NvimTree', 'help', 'toggleterm', 'terminal'}
-vim.g.indentLine_bufTypeExclude = {'startify', 'NvimTree', 'help', 'toggleterm', 'terminal'}
+require("indent_blankline").setup {
+    char = "¦",
+    show_trailing_blankline_indent = false,
+    buftype_exclude = {"startify", "NvimTree", "help", "toggleterm", "terminal"},
+    filetype_exclude = {"startify", "NvimTree", "help", "toggleterm", "terminal"},
+}
 
 vim.cmd [[
     let g:ascii = [
