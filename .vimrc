@@ -1,3 +1,11 @@
+call plug#begin('~/.vim/plugged')
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
+    Plug 'mhinz/vim-startify'
+call plug#end()
+
 if has('filetype')
     filetype indent plugin on
 endif
@@ -35,6 +43,7 @@ set softtabstop=4
 set expandtab
 set noswapfile
 set nowrap
+set background=dark
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
@@ -55,7 +64,20 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-colorscheme default
+colorscheme gruvbox
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=Yellow
+highlight CursorLineNr cterm=bold ctermbg=Black ctermfg=Yellow
 set cursorline
+
+let g:ascii = [
+\'             ,,                   ', 
+\'             db                   ', 
+\'                                  ', 
+\"`7M'   `MF'`7MM  `7MMpMMMb.pMMMb. ", 
+\'  VA   ,V    MM    MM    MM    MM ', 
+\'   VA ,V     MM    MM    MM    MM ', 
+\'    VVV      MM    MM    MM    MM ', 
+\'     W     .JMML..JMML  JMML  JMML',
+\'',
+\] 
+let g:startify_custom_header = startify#pad(g:ascii)
