@@ -2,7 +2,6 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'gruvbox-community/gruvbox'
-    use 'tomasiser/vim-code-dark'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
