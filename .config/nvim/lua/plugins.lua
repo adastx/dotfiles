@@ -17,7 +17,7 @@ require('packer').startup(function()
     use 'mhinz/vim-startify'
     use "akinsho/toggleterm.nvim"
     use "ray-x/lsp_signature.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
+    use "Yggdroot/indentLine"
 
     use {
         'nvim-telescope/telescope.nvim',
