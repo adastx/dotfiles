@@ -5,6 +5,7 @@ require('packer').startup(function()
     use 'tomasiser/vim-code-dark'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
+    use 'tpope/vim-repeat'
     use 'ThePrimeagen/vim-be-good'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
@@ -17,7 +18,7 @@ require('packer').startup(function()
     use 'mhinz/vim-startify'
     use "akinsho/toggleterm.nvim"
     use "ray-x/lsp_signature.nvim"
-    use "Yggdroot/indentLine"
+    use "lukas-reineke/indent-blankline.nvim"
 
     use {
         'nvim-telescope/telescope.nvim',
