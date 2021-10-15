@@ -18,6 +18,7 @@ require('packer').startup(function()
     use "akinsho/toggleterm.nvim"
     use "ray-x/lsp_signature.nvim"
     use "lukas-reineke/indent-blankline.nvim"
+    use "windwp/nvim-autopairs"
 
     use {
         'nvim-telescope/telescope.nvim',
