@@ -1,22 +1,11 @@
 local set = vim.opt
 
-if vim.fn.has('mouse') then
-   set.mouse = "a"
-end
+vim.cmd('filetype indent plugin on')
+vim.cmd('syntax enable')
+vim.cmd('set undodir=$HOME/.vim/undo')
+vim.cmd('set undofile')
 
-if vim.fn.has('filetype') then
-    vim.cmd('filetype indent plugin on')
-end
-
-if vim.fn.has('syntax') then
-    vim.cmd('syntax on')
-end
-
-if vim.fn.has('persistent_undo') then
-    vim.cmd('set undodir=$HOME/.vim/undo')
-    vim.cmd('set undofile')
-end
-
+set.mouse = "a"
 set.termguicolors = true
 set.hidden = true
 set.wildmenu = true
