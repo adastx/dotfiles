@@ -35,6 +35,7 @@ set laststatus=0
 set confirm
 set visualbell
 set cmdheight=2
+set number
 set relativenumber 
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
