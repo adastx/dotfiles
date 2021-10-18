@@ -30,6 +30,7 @@ set.incsearch = true
 set.backspace= 'indent,eol,start'
 set.pastetoggle = '<F11>'
 set.confirm = true
+set.number = true
 set.relativenumber = true
 set.shiftwidth = 4
 set.softtabstop = 4
