@@ -167,11 +167,11 @@ ramp-capacity-4 = " "
 type = internal/date
 interval = 5
 
-date = ""
-date-alt = "%a %b %d "
+date-alt = ""
+date = "%a %b %d "
 
-time = "%H:%M"
 time-alt = "%H:%M"
+time = "%H:%M"
 
 label = "%date%%time%  " 
 label-background = ${colors.background-alt}
