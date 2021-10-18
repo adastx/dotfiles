@@ -88,7 +88,7 @@ font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
 modules-left = i3
 modules-center = 
-modules-right = date
+modules-right = date2
 
 tray-position = none
 tray-padding = 2
@@ -158,6 +158,18 @@ label-urgent-padding = 3
 
 
 [module/date]
+type = internal/date
+interval = 5
+
+date-alt = ""
+date = " %a %b %d "
+
+time-alt = %H:%M
+time = %H:%M
+
+label = "%date%%time%  " 
+
+[module/date2]
 type = internal/date
 interval = 5
 
