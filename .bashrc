@@ -130,6 +130,7 @@ alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/Documents/hugin/bin:$PATH"
 
 # ANTLR
 export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
