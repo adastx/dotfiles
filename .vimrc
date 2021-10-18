@@ -34,19 +34,6 @@ set noswapfile
 set nowrap
 set background=dark
 
-set laststatus=2
-set statusline=
-set statusline+=%#Directory#
-set statusline=\ %f\ 
-set statusline+=%#LineNr#
-set statusline+=%=
-set statusline+=%#Normal#
-set statusline+=\ Lines:
-set statusline+=%L\ 
-set statusline+=\ %p%%\ 
-set statusline+=%#Constant#
-set statusline+=%y
-
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 nnoremap n nzzzv
