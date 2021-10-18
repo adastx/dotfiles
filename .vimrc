@@ -6,18 +6,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'mhinz/vim-startify'
 call plug#end()
 
-if has('filetype')
-    filetype indent plugin on
-endif
-
-if has('syntax')
-    syntax on
-endif
-
-if has('mouse')
-    set mouse=a
-endif
-
+filetype indent plugin on
+syntax enable
+set mouse=a
 set nocompatible
 set hidden
 set wildmenu
@@ -31,12 +22,9 @@ set smartcase
 set backspace=indent,eol,start
 set autoindent
 set ruler
-set laststatus=0
 set confirm
 set visualbell
-set cmdheight=2
-set number
-set relativenumber 
+set number relativenumber 
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 set shiftwidth=4
@@ -45,6 +33,19 @@ set expandtab
 set noswapfile
 set nowrap
 set background=dark
+
+set laststatus=2
+set statusline=
+set statusline+=%#Directory#
+set statusline=\ %f\ 
+set statusline+=%#LineNr#
+set statusline+=%=
+set statusline+=%#Normal#
+set statusline+=\ Lines:
+set statusline+=%L\ 
+set statusline+=\ %p%%\ 
+set statusline+=%#Constant#
+set statusline+=%y
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>

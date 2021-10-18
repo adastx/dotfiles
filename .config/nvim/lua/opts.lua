@@ -127,13 +127,12 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require("toggleterm").setup{
-    -- size can be a number or function which is passed the current terminal
-    size = 65,
+    size = 15,
     open_mapping = [[<c-\>]],
-    hide_numbers = true, -- hide the number column in toggleterm buffers
+    hide_numbers = true,
     persist_size = true,
-    direction = 'vertical',
-    close_on_exit = true, -- close the terminal window when the process exits
+    direction = 'horizontal',
+    close_on_exit = true,
 }
 
 require('kommentary.config').use_extended_mappings()
