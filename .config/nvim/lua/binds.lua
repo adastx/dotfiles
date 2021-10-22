@@ -17,16 +17,13 @@ map('i', '[', '[<c-g>u', opts)
 map('i', '!', '!<c-g>u', opts)
 map('i', '?', '?<c-g>u', opts)
 
-map('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
-map('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
+map('v', 'J', ":m '>+1<CR>gv=gv", opts)
+map('v', 'K', ":m '<-2<CR>gv=gv", opts)
 
 map('n', '<leader>h', ':wincmd h<CR>', opts)
 map('n', '<leader>j', ':wincmd j<CR>', opts)
 map('n', '<leader>k', ':wincmd k<CR>', opts)
 map('n', '<leader>l', ':wincmd l<CR>', opts)
-
-map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
-map('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
 
 map('n', '<C-p>', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
