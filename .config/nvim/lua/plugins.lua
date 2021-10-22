@@ -34,16 +34,6 @@ require('packer').startup(function()
             "saadparwaiz1/cmp_luasnip"
         }
     }
-    -- use {
-    --     "SirVer/ultisnips",
-    --     requires = {
-    --         "honza/vim-snippets",
-    --         "quangnguyen30192/cmp-nvim-ultisnips"
-    --     },
-    --     config = function()
-    --         vim.g.UltiSnipsRemoveSelectModeMappings = 0
-    --     end,
-    -- }
 
     use {
         'lewis6991/gitsigns.nvim',
