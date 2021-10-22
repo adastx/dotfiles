@@ -2,9 +2,9 @@ require'lualine'.setup {
     options = {
         icons_enabled = true,
         theme = 'gruvbox',
-        component_separators = {'', ''},
-        section_separators = {'', ''},
-        disabled_filetypes = {'startify', 'NvimTree', 'toggleterm', 'terminal'}
+        component_separators = {left = '', right = ''},
+        section_separators = {left = '', right = ''},
+        disabled_filetypes = {'startify', 'terminal', 'netrw'}
     },
     sections = {
         lualine_a = {'mode'},
