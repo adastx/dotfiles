@@ -46,7 +46,6 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        -- { name = 'buffer' }
     },
 }
 vim.cmd('autocmd FileType markdown lua require("cmp").setup.buffer { enabled = false }')
