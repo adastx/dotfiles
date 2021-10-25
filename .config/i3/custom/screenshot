@@ -1,5 +1,4 @@
 #!/bin/sh
 
 sleep 0.2
-scrot -sfe 'mv $f ~/Pictures/screenshots/'
-
+scrot -sfe 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
