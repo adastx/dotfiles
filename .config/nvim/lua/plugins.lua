@@ -6,10 +6,11 @@ require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'b3nj5m1n/kommentary'
-    use 'mhinz/vim-startify'
+
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
+
     use "ray-x/lsp_signature.nvim"
     use "windwp/nvim-autopairs"
     use "lukas-reineke/indent-blankline.nvim"
