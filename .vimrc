@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
-    Plug 'mhinz/vim-startify'
 call plug#end()
 
 filetype indent plugin on
@@ -61,16 +60,3 @@ colorscheme gruvbox
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorLineNr cterm=bold ctermbg=Black ctermfg=Yellow
 set cursorline
-
-let g:ascii = [
-\'             ,,                   ', 
-\'             db                   ', 
-\'                                  ', 
-\"`7M'   `MF'`7MM  `7MMpMMMb.pMMMb. ", 
-\'  VA   ,V    MM    MM    MM    MM ', 
-\'   VA ,V     MM    MM    MM    MM ', 
-\'    VVV      MM    MM    MM    MM ', 
-\'     W     .JMML..JMML  JMML  JMML',
-\'',
-\] 
-let g:startify_custom_header = startify#pad(g:ascii)
