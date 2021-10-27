@@ -142,18 +142,3 @@ require("indent_blankline").setup {
     buftype_exclude = {"startify", "help", "terminal"},
     filetype_exclude = {"startify", "help", "terminal"},
 }
-
-vim.cmd [[
-    let g:ascii = [
-    \'                       ,,                   ', 
-    \'                       db                   ', 
-    \'                                            ', 
-    \"`7MMpMMMb.`7M'   `MF'`7MM  `7MMpMMMb.pMMMb. ", 
-    \'  MM    MM  VA   ,V    MM    MM    MM    MM ', 
-    \'  MM    MM   VA ,V     MM    MM    MM    MM ', 
-    \'  MM    MM    VVV      MM    MM    MM    MM ', 
-    \'.JMML  JMML.   W     .JMML..JMML  JMML  JMML',
-    \'',
-    \] 
-    let g:startify_custom_header = startify#pad(g:ascii)
-]]
