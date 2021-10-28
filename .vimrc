@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'romgrk/doom-one.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
@@ -9,6 +9,7 @@ call plug#end()
 filetype indent plugin on
 syntax enable
 set mouse=a
+set termguicolors
 set nocompatible
 set hidden
 set wildmenu
@@ -33,6 +34,7 @@ set expandtab
 set noswapfile
 set nowrap
 set background=dark
+set cursorline
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
@@ -56,7 +58,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-colorscheme gruvbox
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNr cterm=bold ctermbg=Black ctermfg=Yellow
-set cursorline
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+colorscheme doom-one
+highlight CursorLineNr cterm=bold ctermbg=Black ctermfg=Blue

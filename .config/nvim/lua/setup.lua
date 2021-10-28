@@ -32,7 +32,6 @@ set.ttimeoutlen = 200
 set.wrap = false
 set.fcs = 'eob: '
 set.swapfile = false
+set.cursorline = true
 
-vim.cmd('colorscheme gruvbox')
-vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
-vim.cmd('highlight Normal ctermbg=none')
+vim.cmd('colorscheme doom-one')
