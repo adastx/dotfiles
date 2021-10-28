@@ -5,5 +5,5 @@ disabled = true
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
 
-[package]
+[cmd_duration]
 disabled = true

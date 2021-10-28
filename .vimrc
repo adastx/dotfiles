@@ -35,6 +35,7 @@ set noswapfile
 set nowrap
 set background=dark
 set cursorline
+set autochdir
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
