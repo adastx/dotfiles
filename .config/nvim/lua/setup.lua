@@ -35,4 +35,3 @@ set.fcs = 'eob: '
 set.swapfile = false
 set.cursorline = true
 set.pumblend = 0
-set.autochdir = true
