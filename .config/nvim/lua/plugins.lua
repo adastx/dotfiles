@@ -1,7 +1,7 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'gruvbox-community/gruvbox'
+    use 'romgrk/doom-one.vim'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
@@ -15,6 +15,7 @@ require('packer').startup(function()
     use "windwp/nvim-autopairs"
     use "lukas-reineke/indent-blankline.nvim"
     use 'kyazdani42/nvim-web-devicons'
+    use 'norcalli/nvim-colorizer.lua'
 
     use {
         'nvim-telescope/telescope.nvim',
