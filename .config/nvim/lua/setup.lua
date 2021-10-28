@@ -4,6 +4,7 @@ vim.cmd('filetype indent plugin on')
 vim.cmd('syntax enable')
 vim.cmd('set undodir=$HOME/.vim/undo')
 vim.cmd('set undofile')
+vim.cmd('colorscheme doom-one')
 
 set.mouse = "a"
 set.termguicolors = true
@@ -32,7 +33,6 @@ set.ttimeoutlen = 200
 set.wrap = false
 set.fcs = 'eob: '
 set.swapfile = false
-
-vim.cmd('colorscheme gruvbox')
-vim.cmd('highlight CursorLineNr cterm=bold ctermfg=Yellow ctermbg=none')
-vim.cmd('highlight Normal ctermbg=none')
+set.cursorline = true
+set.pumblend = 0
+set.autochdir = true
