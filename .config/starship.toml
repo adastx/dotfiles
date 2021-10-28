@@ -1,0 +1,13 @@
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[cmd_duration]
+disabled = true
+
+[hostname]
+ssh_only = true
+format =  "@[$hostname](bold red) "
