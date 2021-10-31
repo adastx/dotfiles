@@ -1,0 +1,13 @@
+#!/bin/sh
+
+greenclip daemon &
+playerctld daemon &
+nitrogen --restore &
+redshift -l 56:10 &
+pcmanfm -d &
+nm-applet &
+exec i3 & wmpid=$!
+
+sleep 5
+source $HOME/.config/i3/after
+wait $wmpid
