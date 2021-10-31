@@ -120,7 +120,6 @@ export VISUAL=vim
 export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
 export PAGER=most
 
-alias cvim='GIT_DIR=$HOME/.cfg GIT_WORK_TREE=$HOME nvim'
 alias mv='mv -i'
 alias rm='rm -i'
 alias gs='git status'
