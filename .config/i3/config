@@ -14,7 +14,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+c exec gnome-control-center --class=floating_window
-bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/custom/screenshot
+bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
 
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
@@ -165,6 +165,6 @@ for_window [title="^Steam Keyboard$"] floating enable
 ##### Exec
 
 exec_always --no-startup-id /usr/bin/unclutter -b
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id setxkbmap -option grp:win_space_toggle us,dk

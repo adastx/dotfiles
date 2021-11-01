@@ -75,7 +75,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -88,9 +87,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -AlF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='exa -F'
+alias ll='exa -laF'
+alias lh='exa -ldF .*'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,6 +120,7 @@ export VISUAL=vim
 export PS1='\[\033[35m\]\u@\h\[\033[37m\]:\[\033[0;34m\]\w\[\033[37m\]$ ' # Shell prompt
 export PAGER=most
 
+alias cvim='GIT_DIR=$HOME/.cfg GIT_WORK_TREE=$HOME vim'
 alias mv='mv -i'
 alias rm='rm -i'
 alias gs='git status'
