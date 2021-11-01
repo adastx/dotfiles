@@ -8,6 +8,9 @@ error_symbol = "[✗](bold red) "
 [cmd_duration]
 disabled = true
 
+[username]
+format = "[$user]($style)"
+
 [hostname]
 ssh_only = true
 format =  "@[$hostname](bold red) "
