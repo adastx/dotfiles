@@ -15,7 +15,7 @@ require('packer').startup(function()
     use "windwp/nvim-autopairs"
     use "lukas-reineke/indent-blankline.nvim"
     use 'kyazdani42/nvim-web-devicons'
-    use 'norcalli/nvim-colorizer.lua'
+    -- use 'norcalli/nvim-colorizer.lua'
 
     use {
         'nvim-telescope/telescope.nvim',
