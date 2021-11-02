@@ -33,5 +33,4 @@ set.ttimeoutlen = 200
 set.wrap = false
 set.fcs = 'eob: '
 set.swapfile = false
-set.cursorline = true
 set.pumblend = 0
