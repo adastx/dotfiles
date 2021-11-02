@@ -38,7 +38,7 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 4
 
-font-0 = FreeSans:style=Regular:size=15;3 
+font-0 = Averia Libre:style=bold:size=14;4
 font-1 = Font Awesome 5 Free Regular:size=14;4.5
 font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
@@ -82,7 +82,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = FreeSans:style=Regular:size=15;3 
+font-0 = Averia Libre:style=bold:size=14;4
 font-1 = Font Awesome 5 Free Regular:size=14;4.5
 font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
@@ -162,7 +162,7 @@ type = internal/date
 interval = 5
 
 date-alt = ""
-date = " %a %b %d "
+date = " %a, %b %d "
 
 time-alt = %H:%M
 time = %H:%M
@@ -174,7 +174,7 @@ type = internal/date
 interval = 5
 
 date = ""
-date-alt = " %a %b %d "
+date-alt = " %a, %b %d "
 
 time = %H:%M
 time-alt = %H:%M
