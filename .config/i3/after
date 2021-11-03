@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xset dpms 300 300 300 &
+xset r rate 300 25 &
+gtk-launch piavpn &
