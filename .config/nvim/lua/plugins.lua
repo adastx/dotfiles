@@ -16,6 +16,7 @@ require('packer').startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
+    use 'nathom/filetype.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
