@@ -100,10 +100,10 @@ mode "Resize Mode" {
     bindsym Shift+k resize grow height 12 px or 12 ppt
     bindsym Shift+l resize grow width 12 px or 12 ppt
     
-    bindsym minus gaps inner current minus 1
-    bindsym plus gaps inner current plus 1
-    bindsym Shift+minus gaps inner current minus 2
-    bindsym Shift+plus gaps inner current plus 2
+    bindsym minus gaps inner current minus 5
+    bindsym plus gaps inner current plus 5
+    bindsym Shift+minus gaps inner current minus 10
+    bindsym Shift+plus gaps inner current plus 10
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -114,12 +114,12 @@ bindsym $mod+r mode "Resize Mode"
 
 ##### Appearance
 
-font pango:Source Code Pro Medium 11
+font pango:Source Code Pro Medium 12
 
 gaps inner 0
 gaps outer 0
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 smart_gaps on
 hide_edge_borders smart
