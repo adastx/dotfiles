@@ -162,6 +162,7 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 ##### Exec
+exec_always --no-startup-id /usr/bin/unclutter -b
 exec_always --no-startup-id $HOME/.config/polybar/launch
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b 
 exec_always --no-startup-id setxkbmap -option grp:win_space_toggle us,dk 
