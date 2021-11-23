@@ -140,6 +140,7 @@ label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+label-unfocused-background = #0f1b36
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
@@ -153,9 +154,7 @@ label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 
-; Separator in between workspaces
-; label-separator = |
-
+label-separator = " " 
 
 [module/date]
 type = internal/date
