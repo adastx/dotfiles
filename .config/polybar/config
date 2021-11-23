@@ -91,6 +91,7 @@ label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+label-unfocused-background = #0c142b
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
@@ -104,9 +105,7 @@ label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 
-; Separator in between workspaces
-; label-separator = |
-
+label-separator = " " 
 
 [module/battery]
 type = internal/battery
