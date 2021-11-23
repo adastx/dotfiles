@@ -11,6 +11,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 
+export MAKEFLAGS="-j$(nproc)"
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export HISTFILE="$XDG_STATE_HOME"/bash/history
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc 
