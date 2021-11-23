@@ -1,6 +1,5 @@
 local set = vim.opt
 
-vim.g.did_load_filetypes = 1
 vim.cmd('syntax enable')
 vim.cmd('set undodir=$HOME/.vim/undo')
 vim.cmd('set undofile')
