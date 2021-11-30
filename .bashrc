@@ -17,6 +17,9 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=most
 
+source '/usr/share/fzf/key-bindings.bash'
+source '/usr/share/fzf/completion.bash'
+
 alias q='exit'
 alias c='clear'
 alias h='history'
