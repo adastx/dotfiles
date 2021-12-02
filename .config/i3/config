@@ -8,10 +8,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+q kill
-bindsym $mod+Escape exec --no-startup-id "betterlockscreen -l"
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+e exec --no-startup-id pcmanfm
+bindsym $mod+Escape exec --no-startup-id betterlockscreen -l
+bindsym $mod+Return exec alacritty
+bindsym $mod+b exec firefox
+bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+c exec gnome-control-center --class=floating_window
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
