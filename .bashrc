@@ -34,6 +34,7 @@ alias pf='pfetch'
 alias ls='exa'
 alias l='exa -1'
 alias la='exa -1a'
+alias ll='exa -la'
 alias lt='exa -T'
 alias lh="exa -1dI '.|..' .*"
 
