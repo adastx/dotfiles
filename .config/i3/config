@@ -12,9 +12,9 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm=" 
 
 bindsym $mod+Escape exec --no-startup-id systemctl suspend
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+e exec --no-startup-id pcmanfm
+bindsym $mod+Return exec alacritty
+bindsym $mod+b exec firefox
+bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
 

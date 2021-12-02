@@ -38,23 +38,6 @@ alias ll='exa -la'
 alias lt='exa -T'
 alias lh="exa -1dI '.|..' .*"
 
-cd_up() {
-    case $1 in
-        *[!0-9]*)
-            cd $( pwd | sed -r "s|(.*/$1[^/]*/).*|\1|i" )
-            ;;
-        *)
-            cd $(printf "%0.0s../" $(seq 1 $1));
-            ;;
-    esac
-}
-alias '..'='cd_up'
-alias ghd='cd ~/Documents/github'
-alias aau='cd ~/Documents/uni/5\ Semester'
-alias game='cd ~/Documents/github/2018shock/'
-
-cpy() { readlink -en $1 | xclip -sel clipboard; }
-
 alias g='git'
 alias gs='git status'
 alias lg='git log'
@@ -81,6 +64,24 @@ alias vimrc='vim ~/.vim/vimrc'
 alias nvimrc='cd $XDG_CONFIG_HOME/nvim;nvim .'
 alias i3config='vim $XDG_CONFIG_HOME/i3/config'
 alias startup='vim $XDG_CONFIG_HOME/i3/init'
+
+cpy() { readlink -en $1 | xclip -sel clipboard; }
+
+cd_up() {
+    case $1 in
+        *[!0-9]*)
+            cd $( pwd | sed -r "s|(.*/$1[^/]*/).*|\1|i" )
+            ;;
+        *)
+            cd $(printf "%0.0s../" $(seq 1 $1));
+            ;;
+    esac
+}
+alias '..'='cd_up'
+alias ghd='cd ~/Documents/github'
+alias aau='cd ~/Documents/uni/5\ Semester'
+alias game='cd ~/Documents/github/2018shock/'
+alias nova='ssh -p 2080 192.168.0.156'
 
 alias luamake=/home/adam/Documents/github/lua-language-server/3rd/luamake/luamake
 
