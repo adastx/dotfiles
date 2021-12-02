@@ -8,7 +8,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+q kill
-bindsym $mod+Escape exec --no-startup-id systemctl suspend
+bindsym $mod+Escape exec --no-startup-id "betterlockscreen -l"
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id pcmanfm
@@ -170,3 +170,4 @@ exec_always --no-startup-id /usr/bin/unclutter -b
 exec_always --no-startup-id $HOME/.config/polybar/launch
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id setxkbmap -option grp:win_space_toggle us,dk
+exec --no-startup-id $XDG_CONFIG_HOME/i3/extra/lidlock &
