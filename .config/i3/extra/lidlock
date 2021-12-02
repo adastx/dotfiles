@@ -17,5 +17,5 @@ do
     fi
 
     OLD_STATE=$CUR_STATE
-    sleep 1
+    sleep 5
 done
