@@ -117,7 +117,7 @@ bindsym $mod+r mode "Resize Mode"
 ##### Appearance
 font pango:Source Code Pro Medium 11
 
-gaps inner 0
+gaps inner 5
 gaps outer 0
 default_border pixel 2
 default_floating_border pixel 2
