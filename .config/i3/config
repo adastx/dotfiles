@@ -16,6 +16,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
+bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
