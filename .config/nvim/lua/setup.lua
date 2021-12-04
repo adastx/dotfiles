@@ -33,3 +33,5 @@ set.wrap = false
 set.fcs = 'eob: '
 set.swapfile = false
 set.pumblend = 0
+set.splitright = true
+set.splitbelow = true

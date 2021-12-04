@@ -35,6 +35,8 @@ set noswapfile
 set nowrap
 set background=dark
 set cursorline
+set splitright
+set splitbelow
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
