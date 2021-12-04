@@ -38,7 +38,7 @@ alias lh="exa -1dI '.|..' .*"
 
 alias g='git'
 alias gs='git status'
-alias lg='git log'
+alias lg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias com='git commit'
 alias sth='git stash'
 alias clone='git clone'
@@ -48,7 +48,7 @@ alias gpl='git pull'
 
 alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
 alias cs='config status'
-alias clg='config log'
+alias clg="config log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias ccom='config commit'
 alias csth='config stash'
 alias cu='config add -u'
