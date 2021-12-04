@@ -1,7 +1,7 @@
 local set = vim.opt
 
 vim.cmd('syntax enable')
-vim.cmd('set undodir=$HOME/.vim/undo')
+vim.cmd('set undodir=$XDG_CACHE_HOME/nvim/undo')
 vim.cmd('set undofile')
 vim.cmd('colorscheme doom-one')
 
