@@ -1,14 +1,12 @@
-HISTFILE=$ZDOTDIR/history
-HISTSIZE=1000
-SAVEHIST=5000
-setopt hist_ignore_all_dups
-unsetopt beep
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' menu select
-autoload -Uz compinit 
-compinit -d $ZDOTDIR/zcompdump-$ZSH_VERSION
-setopt COMPLETE_ALIASES
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+shopt -s histappend
+shopt -s checkwinsize
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
@@ -18,6 +16,9 @@ export PATH
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=most
+
+source '/usr/share/fzf/key-bindings.bash'
+source '/usr/share/fzf/completion.bash'
 
 alias q='exit'
 alias c='clear'
@@ -57,8 +58,8 @@ alias cdf='config diff'
 alias cpl='config pull'
 alias cvim='GIT_DIR=$HOME/.cfg GIT_WORK_TREE=$HOME vim'
 
-alias loadzsh='source $XDG_CONFIG_HOME/zsh/.zshrc'
-alias zshrc='vim $XDG_CONFIG_HOME/zsh/.zshrc'
+alias loadbash='source ~/.bashrc'
+alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vim/vimrc'
 alias nvimrc='cd $XDG_CONFIG_HOME/nvim;nvim .'
 alias i3config='vim $XDG_CONFIG_HOME/i3/config'
@@ -83,20 +84,4 @@ alias pc='ssh -p 2080 192.168.0.151'
 
 alias luamake=/home/adam/Documents/github/lua-language-server/3rd/luamake/luamake
 
-function zvm_config() {
-    ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
-}
-
-function zvm_after_init() {
-    source '/usr/share/fzf/key-bindings.zsh'
-    source '/usr/share/fzf/completion.zsh'
-    bindkey '^ ' autosuggest-accept
-    bindkey '\e.' insert-last-word
-}
-
-eval "$(starship init zsh)"
-
-source '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
-source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-source '/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh'
-source '/usr/share/autojump/autojump.zsh'
+eval "$(starship init bash)"
