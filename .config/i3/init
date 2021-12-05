@@ -2,7 +2,7 @@
 
 greenclip daemon &
 playerctld daemon &
-nitrogen --restore &
+nitrogen --restore
 redshift -l 56:10 &
 pcmanfm -d &
 nm-applet &
