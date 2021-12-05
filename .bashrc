@@ -1,9 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=5000
 
 shopt -s histappend
 shopt -s checkwinsize
