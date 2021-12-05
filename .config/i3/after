@@ -1,5 +1,5 @@
 #!/bin/sh
 
-xset r rate 300 25 &
-gtk-launch piavpn &
-openrgb -p no-rgb &
+xset r rate 300 25
+gtk-launch piavpn
+$XDG_CONFIG_HOME/i3/extra/no-rgb
