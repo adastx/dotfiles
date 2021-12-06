@@ -76,9 +76,8 @@ let g:netrw_home = $XDG_DATA_HOME."/vim"
 call mkdir($XDG_DATA_HOME."/vim/spell", 'p')
 set viewdir=$XDG_DATA_HOME/vim/view | call mkdir(&viewdir, 'p')
 
+set viminfofile=$XDG_CACHE_HOME/vim/viminfo 
 set backupdir=$XDG_CACHE_HOME/vim/backup | call mkdir(&backupdir, 'p')
 set directory=$XDG_CACHE_HOME/vim/swap   | call mkdir(&directory, 'p')
 set undodir=$XDG_CACHE_HOME/vim/undo     | call mkdir(&undodir,   'p')
 set undofile
-
-if !has('nvim') | set viminfofile=$XDG_CACHE_HOME/vim/viminfo | endif
