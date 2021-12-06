@@ -1,10 +1,10 @@
-local set = vim.opt
-
 vim.cmd('syntax enable')
 vim.cmd('set undodir=$XDG_CACHE_HOME/nvim/undo')
 vim.cmd('set undofile')
+vim.cmd('set shada')
 vim.cmd('colorscheme doom-one')
 
+local set = vim.opt
 set.mouse = "a"
 set.termguicolors = true
 set.hidden = true
