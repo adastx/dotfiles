@@ -120,6 +120,7 @@ gaps inner 5
 gaps outer 0
 default_border pixel 2
 default_floating_border pixel 2
+title_align center
 
 smart_gaps on
 hide_edge_borders smart
