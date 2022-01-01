@@ -84,10 +84,6 @@ alias nova='ssh -p 2080 192.168.0.156'
 
 alias luamake=/home/adam/Documents/github/lua-language-server/3rd/luamake/luamake
 
-function zvm_config() {
-    ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
-}
-
 function zvm_after_init() {
     source '/usr/share/fzf/key-bindings.zsh'
     source '/usr/share/fzf/completion.zsh'

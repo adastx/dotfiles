@@ -37,12 +37,20 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 # Focus the parent container
 bindsym $mod+a focus parent  
 # Focus tiled / floating windows
@@ -97,11 +105,19 @@ mode "Resize Mode" {
     bindsym j resize shrink height 6 px or 6 ppt
     bindsym k resize grow height 6 px or 6 ppt
     bindsym l resize grow width 6 px or 6 ppt
+    bindsym Left resize shrink width 6 px or 6 ppt
+    bindsym Down resize shrink height 6 px or 6 ppt
+    bindsym Up resize grow height 6 px or 6 ppt
+    bindsym Right resize grow width 6 px or 6 ppt
 
     bindsym Shift+h resize shrink width 12 px or 12 ppt
     bindsym Shift+j resize shrink height 12 px or 12 ppt
     bindsym Shift+k resize grow height 12 px or 12 ppt
     bindsym Shift+l resize grow width 12 px or 12 ppt
+    bindsym Shift+Left resize shrink width 12 px or 12 ppt
+    bindsym Shift+Down resize shrink height 12 px or 12 ppt
+    bindsym Shift+Up resize grow height 12 px or 12 ppt
+    bindsym Shift+Right resize grow width 12 px or 12 ppt
     
     bindsym minus gaps inner current minus 5
     bindsym plus gaps inner current plus 5
