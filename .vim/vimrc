@@ -42,7 +42,7 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 nnoremap n nzzzv
 nnoremap N Nzzzv
-inoremap kj <Esc>
+" inoremap kj <Esc>
 tnoremap kj <C-\><C-n>
 
 inoremap , ,<c-g>u
