@@ -8,7 +8,7 @@ map('', 'Y', 'y$', opts)
 map('n', '<C-L>', ':nohl<CR><C-L>', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
-map('i', 'kj', '<Esc>', opts)
+-- map('i', 'kj', '<Esc>', opts)
 map('t', 'kj', '<C-\\><C-n>', { noremap = true })
 
 map('i', ',', ',<c-g>u', opts)
