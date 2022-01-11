@@ -81,7 +81,9 @@ cd_up() {
 alias '..'='cd_up'
 alias ghd='cd ~/Documents/github'
 alias aau='cd ~/Documents/uni/5\ Semester'
-alias pc='ssh -p 2080 192.168.0.151'
+alias pc='ssh -p 2080 adam@ooz'
+alias rpi='ssh -p 2080 adam@rpi2'
+alias todo='vim ~/Documents/todo.txt'
 
 alias luamake=/home/adam/Documents/github/lua-language-server/3rd/luamake/luamake
 
