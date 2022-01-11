@@ -3,8 +3,7 @@
 ;background = #10152c
 ;background = #080f1f
 background = #090809
-background-alt = #090809
-background-alt-i3 = #1b2f60
+background-alt = #1b2f60
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #254183
@@ -16,7 +15,7 @@ alert = #bd2c40
 
 [bar/bar1]
 width = 100%
-height = 25
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -38,7 +37,7 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 5 
 
-font-0 = Averia Libre:style=bold:size=15;4
+font-0 = Averia Libre:style=bold:size=16;5
 font-1 = Font Awesome 5 Free Regular:size=14;4.5
 font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
@@ -61,7 +60,7 @@ enable-ipc = true
 type = internal/xkeyboard
 ;blacklist-0 = num lock
 label-layout = "%layout% "
-label-layout-background = ${colors.background-alt}
+label-layout-background = ${colors.background}
 
 label-indicator-padding = 2
 label-indicator-margin = 0
@@ -84,19 +83,17 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt-i3}
-label-focused-foreground = #f1e98a
+label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-background = #0c142b
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = #0f1b36
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -127,7 +124,7 @@ format-charging = <animation-charging> <label-charging>
 ;   <ramp-capacity>
 ;   <animation-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-background = ${colors.background-alt}
+format-discharging-background = ${colors.background}
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
@@ -135,12 +132,12 @@ format-discharging-background = ${colors.background-alt}
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
 label-charging = "%percentage%"
-label-charging-background = ${colors.background-alt}
+label-charging-background = ${colors.background}
 
 format-full = <ramp-capacity> <label-full>
-format-full-background = ${colors.background-alt}
+format-full-background = ${colors.background}
 label-full = "%percentage%"
-label-full-background = ${colors.background-alt} 
+label-full-background = ${colors.background} 
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
@@ -148,7 +145,7 @@ label-full-background = ${colors.background-alt}
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
 label-discharging = "%percentage%"
-label-discharging-background = ${colors.background-alt}
+label-discharging-background = ${colors.background}
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = " "
@@ -169,13 +166,13 @@ type = internal/date
 interval = 5
 
 date-alt = ""
-date = "%a, %b %d "
+date = " %a, %d %b "
 
 time-alt = "%H:%M"
 time = "%H:%M"
 
 label = "%date%%time%  " 
-label-background = ${colors.background-alt}
+label-background = ${colors.background}
 
 
 
@@ -183,15 +180,15 @@ label-background = ${colors.background-alt}
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-background = ${colors.background-alt} 
+format-volume-background = ${colors.background} 
 
 label-volume = "  %percentage%"
 label-volume-foreground = ${root.foreground}
-label-volume-background = ${colors.background-alt}
+label-volume-background = ${colors.background}
 
 label-muted = "  muted"
 label-muted-foreground = #999
-label-muted-background = ${colors.background-alt}
+label-muted-background = ${colors.background}
 
 
 
