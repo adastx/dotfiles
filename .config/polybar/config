@@ -16,7 +16,7 @@ alert = #bd2c40
 [bar/bar1]
 monitor = DP-2
 width = 100%
-height = 25
+height = 28
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -38,7 +38,7 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 4
 
-font-0 = Averia Libre:style=bold:size=14;4
+font-0 = Averia Libre:style=bold:size=15;3.6
 font-1 = Font Awesome 5 Free Regular:size=14;4.5
 font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
@@ -60,7 +60,7 @@ enable-ipc = true
 [bar/bar2]
 monitor = DP-4.8
 width = 100%
-height = 25
+height = 28
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -82,9 +82,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Averia Libre:style=bold:size=14;4
-font-1 = Font Awesome 5 Free Regular:size=14;4.5
-font-2 = Font Awesome 5 Free Solid:size=14;4.5
+font-0 = Averia Libre:style=bold:size=15;3.6
 
 modules-left = i3
 modules-center = 
@@ -134,18 +132,16 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-foreground = #f1e98a
 label-focused-underline= ${colors.primary}
 label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-background = #0f1b36
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = #0f1b36
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -161,7 +157,7 @@ type = internal/date
 interval = 5
 
 date-alt = ""
-date = " %a, %b %d "
+date = " %a, %d %b "
 
 time-alt = %H:%M
 time = %H:%M
@@ -173,7 +169,7 @@ type = internal/date
 interval = 5
 
 date = ""
-date-alt = "%a, %b %d "
+date-alt = " %a, %d %b "
 
 time = %H:%M
 time-alt = %H:%M
