@@ -38,7 +38,7 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 4
 
-font-0 = Averia Libre:style=bold:size=15;3.6
+font-0 = Averia Libre:style=bold:size=15;3.8
 font-1 = Font Awesome 5 Free Regular:size=14;4.5
 font-2 = Font Awesome 5 Free Solid:size=14;4.5
 
@@ -141,7 +141,7 @@ label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = #0f1b36
+label-visible-background = #242423
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
