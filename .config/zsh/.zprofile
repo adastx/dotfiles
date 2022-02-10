@@ -13,6 +13,6 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java 
-nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings
+export SSB_HOME="$XDG_DATA_HOME"/zoom
 
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx $XDG_CONFIG_HOME/X11/xinitrc -- vt1
