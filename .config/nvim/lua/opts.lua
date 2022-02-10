@@ -51,66 +51,29 @@ cmp.setup {
 }
 vim.cmd('autocmd FileType markdown lua require("cmp").setup.buffer { enabled = false }')
 
-require('nvim-autopairs').setup{}
-
 -- LSPCONFIG
-local nvim_lsp = require('lspconfig')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { 'omnisharp', 'html', 'sumneko_lua', 'bashls', 'tsserver', 'cssls' }
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        capabilities = capabilities,
-    }
-end
+local lsp_installer = require("nvim-lsp-installer")
 
--- C#
-local pid = vim.fn.getpid()
-require'lspconfig'.omnisharp.setup {
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  on_attach = function(_, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  end,
-  cmd = { "/usr/bin/omnisharp", "--languageserver" , "--hostPID", tostring(pid) },
-}
+-- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
+-- or if the server is already installed).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
 
--- LUA
-local sumneko_root_path = "/home/adam/Documents/github/lua-language-server"
-local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
-require'lspconfig'.sumneko_lua.setup {
-    cmd = {sumneko_binary, "-E", sumneko_root_path.."/main.lua"};
-    settings = {
-        Lua = {
-            runtime = {
-                version = 'LuaJIT',
-                path = runtime_path,
-            },
-            diagnostics = {
-                globals = {'vim'},
-            },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
-}
-
--- HTML, CSS, JS (TS), BASH
-require'lspconfig'.html.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.bashls.setup{}
+    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
+    -- before passing it onwards to lspconfig.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
 
 -- Misc
+
+require('nvim-autopairs').setup{}
 
 require'lsp_signature'.setup {
     floating_window = false
