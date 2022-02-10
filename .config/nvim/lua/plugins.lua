@@ -7,6 +7,7 @@ require('packer').startup(function()
     use 'tpope/vim-repeat'
     use 'b3nj5m1n/kommentary'
 
+    use 'williamboman/nvim-lsp-installer'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
