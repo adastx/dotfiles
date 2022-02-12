@@ -2,9 +2,9 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'romgrk/doom-one.vim'
-    use 'tpope/vim-fugitive'
+    -- use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
-    use 'tpope/vim-repeat'
+    -- use 'tpope/vim-repeat'
     use 'b3nj5m1n/kommentary'
 
     use 'williamboman/nvim-lsp-installer'
