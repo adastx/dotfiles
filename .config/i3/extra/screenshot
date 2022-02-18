@@ -1,4 +1,4 @@
 #!/bin/sh
 
 sleep 0.2
-scrot -s -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
+scrot --line mode=edge -s -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
