@@ -19,6 +19,7 @@ export PAGER=most
 source '/usr/share/fzf/key-bindings.bash'
 source '/usr/share/fzf/completion.bash'
 source '/usr/share/autojump/autojump.bash'
+source "/home/adam/.local/share/cargo/env"
 
 alias q='exit'
 alias c='clear'
