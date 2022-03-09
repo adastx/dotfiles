@@ -153,6 +153,7 @@ for_window [window_role="About"] floating enable
 
 for_window [window_role="gnome-calculator"] floating enable
 for_window [title="GNOME Tweaks"] floating enable
+for_window [title="Nitrogen"] floating enable
 
 # Jetbrains
 for_window [class="^com-intellij-updater-Runner$" title="^Update$"] floating enable
