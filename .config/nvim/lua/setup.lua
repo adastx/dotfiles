@@ -35,3 +35,4 @@ set.swapfile = false
 set.pumblend = 0
 set.splitright = true
 set.splitbelow = true
+set.cursorline = true
