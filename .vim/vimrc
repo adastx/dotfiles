@@ -59,6 +59,10 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader><left> :wincmd h<CR>
+nnoremap <leader><down> :wincmd j<CR>
+nnoremap <leader><up> :wincmd k<CR>
+nnoremap <leader><right> :wincmd l<CR>
 
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
