@@ -4,7 +4,7 @@ require'lualine'.setup {
         theme = 'onedark',
         component_separators = {left = '', right = ''},
         section_separators = {left = '', right = ''},
-        disabled_filetypes = {'startify', 'terminal', 'netrw'}
+        disabled_filetypes = {'startify', 'terminal', 'netrw', 'NvimTree', 'packer'}
     },
     sections = {
         lualine_a = {'mode'},
