@@ -1,132 +1,170 @@
-local use = require('packer').use
-require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'adast9/onedark.nvim'
-    use 'nathom/filetype.nvim'
-    use {
-        'lewis6991/impatient.nvim',
-        config = function()
-            require("impatient")
-        end
-    }
+local packer = require("packer")
 
-    use 'tpope/vim-surround'
-    use {
-        'b3nj5m1n/kommentary',
-        keys = {
-            {"n", "gcc"},
-            {"n", "gc"},
-            {"v", "gc"},
-        },
-        config = function()
-            require "setup.kommentary"
-        end
-    }
+local plugins = {
+    { "nathom/filetype.nvim" },
 
-    use {
-        'williamboman/nvim-lsp-installer',
-        -- after = 'nvim-lspconfig',
+    { 
+        "nvim-lua/plenary.nvim",
+        opt = true,
+    },
+
+    {
+        "lewis6991/impatient.nvim",
+        config = function() 
+            require("impatient") 
+        end,
+    },
+
+    { 
+        "wbthomason/packer.nvim",
+        event = "VimEnter",
+    },
+
+    { 
+        "adast9/onedark.nvim",
+        after = "packer.nvim",
+        config = function()
+            require('onedark').load()
+        end,
+    },
+
+    {
+        "kyazdani42/nvim-web-devicons",
+        after = "onedark.nvim"
+    },
+
+    {
+        "nvim-lualine/lualine.nvim",
+        after = "nvim-web-devicons",
+        config = function()
+            require "setup.lualine"
+        end,
+    },
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        event = { "BufRead" , "BufNewFile" },
+        config = function()
+            require "setup.indent-blankline"
+        end,
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        event = { "BufRead" , "BufNewFile" },
+        config = function()
+            require "setup.nvim-treesitter"
+        end,
+        run = ':TSUpdate',
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        event = { "BufRead" , "BufNewFile" },
+        wants = "plenary.nvim",
+        config = function()
+            require('gitsigns').setup()
+        end,
+    },
+
+    -- lsp stuff
+    
+    { "neovim/nvim-lspconfig" },
+
+    {
+        "williamboman/nvim-lsp-installer",
+        after = "nvim-lspconfig",
         config = function()
             require "setup.nvim-lsp-installer"
-        end
-    }
-
-    use 'neovim/nvim-lspconfig'
-    -- use {
-    --     'neovim/nvim-lspconfig',
-    --     after = { 'nvim-cmp' },
-    --     event = { 'BufRead', 'BufNewFile', 'InsertEnter' },
-    -- }
-
-    use {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
-        config = function() 
-            require "setup.nvim-cmp"
         end,
-        wants = 'LuaSnip',
-        requires = {
-            {
-                'hrsh7th/cmp-nvim-lsp'
-            },
-            {
-                "L3MON4D3/LuaSnip",
-                wants = "friendly-snippets",
-                event = "InsertCharPre",
-                config = function()
-                    require("luasnip/loaders/from_vscode").lazy_load()
-                end
-            },
-            {
-                "rafamadriz/friendly-snippets",
-                event = "InsertCharPre"
-            },
-            {
-                "saadparwaiz1/cmp_luasnip",
-                event = "InsertCharPre"
-            }
-        }
-    }
+    },
 
-    use {
+    {
         "ray-x/lsp_signature.nvim",
+        after = "nvim-lspconfig",
         event = 'InsertEnter',
-        -- event = { 'BufRead' , 'BufNewFile' },
         config = function()
             require "setup.lsp_signature"
         end
-    }
+    },
 
-    use {
+    -- load luasnips + cmp related in insert mode only
+
+    {
+        "L3MON4D3/LuaSnip",
+        wants = "friendly-snippets",
+        event = "InsertEnter",
+        config = function()
+            require("luasnip/loaders/from_vscode").lazy_load()
+        end,
+    },
+
+    {
+        "rafamadriz/friendly-snippets",
+        module = "cmp_nvim_lsp",
+    },
+
+    {
+        "hrsh7th/nvim-cmp",
+        after = "LuaSnip",
+        config = function()
+            require "setup.nvim-cmp"
+        end,
+    },
+
+
+    {
+        "saadparwaiz1/cmp_luasnip",
+        after = "LuaSnip",
+    },
+
+    {
+        "hrsh7th/cmp-nvim-lsp",
+        after = "cmp_luasnip",
+    },
+
+    {
         "windwp/nvim-autopairs",
-        after = { 'nvim-cmp'},
+        after = "nvim-cmp",
         config = function()
             require('nvim-autopairs').setup{}
-        end
-    }
+        end,
+    },
 
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-        event = { 'BufRead' , 'BufNewFile' },
+    { 
+        "tpope/vim-surround",
+        event = { "BufRead" , "BufNewFile" },
+    },
+
+    {
+        "b3nj5m1n/kommentary",
+        -- event = { "BufRead" , "BufNewFile" },
+        keys = { "gcc", "gc" },
         config = function()
-            require "setup.indent-blankline"
-        end
-    }
+            require "setup.kommentary"
+        end,
+    },
 
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            'nvim-lua/popup.nvim',
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-fzy-native.nvim',
-            'BurntSushi/ripgrep'
-        }
-    }
+    { 
+        "BurntSushi/ripgrep",
+        opt = true,
+    },
 
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim'
-        },
-        event = { 'BufRead' , 'BufNewFile' },
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        opt = true,
+    },
 
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function()
-            require "setup.nvim-treesitter"
-        end
-    }
+    {
+        "nvim-telescope/telescope.nvim",
+        module = "telescope",
+        cmd = "Telescope",
+        wants = { "ripgrep", "telescope-fzf-native.nvim", "plenary.nvim" },
+    },
+}
 
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
-        config = function()
-            require "setup.lualine"
-        end
-    }
+return packer.startup(function(use)
+    for _, v in pairs(plugins) do
+        use(v)
+    end
 end)

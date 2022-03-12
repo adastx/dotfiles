@@ -1,7 +1,6 @@
 vim.cmd('syntax enable')
 vim.cmd('set undodir=$XDG_CACHE_HOME/nvim/undo')
 vim.cmd('set undofile')
-require('onedark').load()
 
 local set = vim.opt
 set.mouse = "a"
