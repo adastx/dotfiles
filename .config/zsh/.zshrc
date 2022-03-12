@@ -39,7 +39,7 @@ alias clg="config log --graph --abbrev-commit --decorate --format=format:'%C(bol
 
 alias zshrc='vim $XDG_CONFIG_HOME/zsh/.zshrc'
 alias vimrc='vim ~/.vim/vimrc'
-alias nvimrc='cd $XDG_CONFIG_HOME/nvim;nvim .'
+alias nvimrc='cd $XDG_CONFIG_HOME/nvim;nvim'
 alias i3config='vim $XDG_CONFIG_HOME/i3/config'
 alias startup='vim $XDG_CONFIG_HOME/i3/init'
 
