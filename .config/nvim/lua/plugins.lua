@@ -69,7 +69,10 @@ local plugins = {
 
     -- lsp stuff
 
-    { "neovim/nvim-lspconfig" },
+    { 
+        "neovim/nvim-lspconfig",
+        event = { "BufRead" , "BufNewFile" },
+    },
 
     {
         "williamboman/nvim-lsp-installer",
@@ -82,7 +85,6 @@ local plugins = {
     {
         "ray-x/lsp_signature.nvim",
         after = "nvim-lspconfig",
-        event = 'InsertEnter',
         config = function()
             require "setup.lsp_signature"
         end
@@ -124,7 +126,6 @@ local plugins = {
 
     {
         "windwp/nvim-autopairs",
-        -- event = { "BufRead" , "BufNewFile" },
         after = "nvim-cmp",
         config = function()
             require('nvim-autopairs').setup{}
@@ -138,7 +139,6 @@ local plugins = {
 
     {
         "b3nj5m1n/kommentary",
-        -- event = { "BufRead" , "BufNewFile" },
         keys = { "gcc", "gc" },
         config = function()
             require "setup.kommentary"
