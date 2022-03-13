@@ -68,7 +68,7 @@ local plugins = {
     },
 
     -- lsp stuff
-    
+
     { "neovim/nvim-lspconfig" },
 
     {
@@ -111,7 +111,6 @@ local plugins = {
             require "setup.nvim-cmp"
         end,
     },
-
 
     {
         "saadparwaiz1/cmp_luasnip",
