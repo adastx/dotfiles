@@ -115,7 +115,7 @@ local plugins = {
 
     {
         "saadparwaiz1/cmp_luasnip",
-        after = "LuaSnip",
+        after = { "LuaSnip", "nvim-cmp" }
     },
 
     {
@@ -125,6 +125,7 @@ local plugins = {
 
     {
         "windwp/nvim-autopairs",
+        -- event = { "BufRead" , "BufNewFile" },
         after = "nvim-cmp",
         config = function()
             require('nvim-autopairs').setup{}
