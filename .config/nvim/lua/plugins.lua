@@ -160,6 +160,9 @@ local plugins = {
         module = "telescope",
         cmd = "Telescope",
         wants = { "ripgrep", "telescope-fzf-native.nvim", "plenary.nvim" },
+        config = function()
+            require "setup.telescope"
+        end
     },
 }
 
