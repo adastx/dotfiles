@@ -90,12 +90,12 @@ local plugins = {
         end
     },
 
-    -- load luasnips + cmp related in insert mode only
+    -- load luasnips + cmp related when lsp attaches
 
     {
         "L3MON4D3/LuaSnip",
         wants = "friendly-snippets",
-        event = "InsertEnter",
+        event = "User lspAttached",
         config = function()
             require("luasnip/loaders/from_vscode").lazy_load()
         end,
