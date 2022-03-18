@@ -48,4 +48,3 @@ cmp.setup {
         { name = 'luasnip' },
     },
 }
-vim.cmd('autocmd FileType markdown lua require("cmp").setup.buffer { enabled = false }')
