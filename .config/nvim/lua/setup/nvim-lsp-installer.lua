@@ -6,7 +6,10 @@ lsp_installer.on_server_ready(function(server)
     local opts = {
         on_attach = function()
             vim.cmd('doautocmd User lspAttached')
+            vim.cmd('augroup Format')
+            vim.cmd('autocmd! * <buffer>')
             vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+            vim.cmd('augroup END')
         end,
     }
 
