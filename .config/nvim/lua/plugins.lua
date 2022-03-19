@@ -3,24 +3,24 @@ local packer = require("packer")
 local plugins = {
     { "nathom/filetype.nvim" },
 
-    { 
+    {
         "nvim-lua/plenary.nvim",
         opt = true,
     },
 
     {
         "lewis6991/impatient.nvim",
-        config = function() 
-            require("impatient") 
+        config = function()
+            require("impatient")
         end,
     },
 
-    { 
+    {
         "wbthomason/packer.nvim",
         event = "VimEnter",
     },
 
-    { 
+    {
         "adast9/onedark.nvim",
         after = "packer.nvim",
         config = function()
@@ -69,7 +69,7 @@ local plugins = {
 
     -- lsp stuff
 
-    { 
+    {
         "neovim/nvim-lspconfig",
         event = { "BufRead" , "BufNewFile" },
     },
@@ -132,7 +132,7 @@ local plugins = {
         end,
     },
 
-    { 
+    {
         "tpope/vim-surround",
         event = { "BufRead" , "BufNewFile" },
     },
@@ -145,7 +145,7 @@ local plugins = {
         end,
     },
 
-    { 
+    {
         "BurntSushi/ripgrep",
         opt = true,
     },
