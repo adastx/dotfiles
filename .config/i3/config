@@ -6,8 +6,10 @@ floating_modifier $mod
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
+
 bindsym $mod+Escape exec --no-startup-id systemctl suspend
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
@@ -16,11 +18,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
 
-# Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
-bindsym $alt+b exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -show-icons 
-bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
+bindsym $alt+b exec --no-startup-id clipmenu -p clipmenu
 bindsym $mod+p exec --no-startup-id rofi-pass  
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5

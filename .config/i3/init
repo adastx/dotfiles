@@ -1,6 +1,6 @@
 #!/bin/sh
 
-greenclip daemon &
+clipmenud &
 playerctld daemon &
 nitrogen --restore
 redshift -l 56:10 &
