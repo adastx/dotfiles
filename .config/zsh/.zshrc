@@ -16,7 +16,10 @@ PATH="$HOME/.dotnet/tools:$PATH"
 export PATH
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=most
+export PAGER="less -j.5 -R --use-color -Dd+y -Du+c"
+
+alias sudo='doas'
+alias sudoedit='doas $EDITOR'
 
 alias q='exit'
 alias c='clear'
@@ -24,11 +27,11 @@ alias r='ranger'
 alias nf='pfetch'
 
 alias ls='exa'
-alias l='exa -1'
-alias la='exa -1a'
-alias ll='exa -la'
-alias lt='exa -T'
-alias lh="exa -1dI '.|..' .*"
+alias l='ls -1'
+alias la='ls -1a'
+alias ll='ls -la'
+alias lt='ls -T'
+alias lh="ls -1dI '.|..' .*"
 
 alias gs='git status'
 alias lg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
@@ -56,3 +59,5 @@ source '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
 source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 source '/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh'
 source '/usr/share/autojump/autojump.zsh'
+
+pfetch
