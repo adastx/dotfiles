@@ -24,7 +24,7 @@ source "/home/adam/.local/share/cargo/env"
 alias q='exit'
 alias c='clear'
 alias r='ranger'
-alias nf='neofetch'
+alias nf='pfetch'
 
 alias ls='exa'
 alias l='exa -1'
