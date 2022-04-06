@@ -21,7 +21,7 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
-bindsym $alt+b exec --no-startup-id clipmenu -p clipmenu
+bindsym $alt+b exec --no-startup-id clipmenu -i -p clipmenu
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 # Media keys
