@@ -139,7 +139,7 @@ local plugins = {
 
     {
         "b3nj5m1n/kommentary",
-        keys = { "gcc", "gc" },
+        event = { "BufRead" , "BufNewFile" },
         config = function()
             require "setup.kommentary"
         end,
