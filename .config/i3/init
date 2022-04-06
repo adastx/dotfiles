@@ -1,5 +1,6 @@
 #!/bin/sh
 
+clipdel -d ".*"
 clipmenud &
 playerctld daemon &
 nitrogen --restore
