@@ -16,14 +16,13 @@ PATH="$HOME/.dotnet/tools:$PATH"
 export PATH
 export EDITOR=vim
 export VISUAL=vim
-export PAGER="less -j.5 -R --use-color -Dd+y -Du+c"
+export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
 alias sudo='doas'
 alias sudoedit='doas $EDITOR'
 
 alias q='exit'
 alias c='clear'
-alias r='ranger'
 alias nf='pfetch'
 
 alias ls='exa'
