@@ -14,7 +14,7 @@ PATH="$HOME/.dotnet/tools:$PATH"
 export PATH
 export EDITOR=vim
 export VISUAL=vim
-export PAGER="less -j.5 -R --use-color -Dd+y -Du+c"
+export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
 alias sudo='doas'
 alias sudoedit='doas $EDITOR'
@@ -26,7 +26,6 @@ source "/home/adam/.local/share/cargo/env"
 
 alias q='exit'
 alias c='clear'
-alias r='ranger'
 alias nf='pfetch'
 
 alias ls='exa'
@@ -50,5 +49,3 @@ alias i3config='vim $XDG_CONFIG_HOME/i3/config'
 alias startup='vim $XDG_CONFIG_HOME/i3/init'
 
 eval "$(starship init bash)"
-
-pfetch
