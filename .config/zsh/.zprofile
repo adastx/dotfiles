@@ -19,5 +19,6 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export CM_LAUNCHER=rofi
 export CM_SELECTIONS=clipboard
 export CM_DIR=/tmp
+export PF_INFO="ascii title os kernel uptime pkgs memory"
 
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx $XDG_CONFIG_HOME/X11/xinitrc -- vt1
