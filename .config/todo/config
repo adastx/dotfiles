@@ -1,0 +1,16 @@
+export TODO_DIR=~/Nextcloud/todo
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+export REPORT_FILE="$TODO_DIR/report.txt"
+
+export PRI_A=$RED
+export PRI_B=$YELLOW
+export PRI_C=$GREEN
+export PRI_D=$BLUE
+export PRI_X=$WHITE
+
+export COLOR_DATE=$CYAN
+export COLOR_NUMBER=$BROWN
+export COLOR_META=$CYAN
+
+export TODOTXT_DEFAULT_ACTION=ls
