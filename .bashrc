@@ -21,12 +21,12 @@ alias sudoedit='doas $EDITOR'
 
 source '/usr/share/fzf/key-bindings.bash'
 source '/usr/share/fzf/completion.bash'
-source '/usr/share/autojump/autojump.bash'
 source "/home/adam/.local/share/cargo/env"
 
 alias q='exit'
 alias c='clear'
 alias nf='pfetch'
+alias t='todo.sh'
 
 alias ls='exa'
 alias l='ls -1'
@@ -49,3 +49,6 @@ alias i3config='vim $XDG_CONFIG_HOME/i3/config'
 alias startup='vim $XDG_CONFIG_HOME/i3/init'
 
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+
+pfetch
