@@ -24,6 +24,7 @@ alias sudoedit='doas $EDITOR'
 alias q='exit'
 alias c='clear'
 alias nf='pfetch'
+alias t='todo.sh'
 
 alias ls='exa'
 alias l='ls -1'
@@ -53,10 +54,10 @@ function zvm_after_init() {
 }
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 source '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
 source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 source '/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh'
-source '/usr/share/autojump/autojump.zsh'
 
 pfetch
