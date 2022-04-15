@@ -164,6 +164,14 @@ local plugins = {
             require "setup.telescope"
         end
     },
+
+    {
+        "norcalli/nvim-colorizer.lua",
+        cmd = { "ColorizerToggle" },
+        config = function()
+            require "colorizer".setup()
+        end,
+    },
 }
 
 return packer.startup(function(use)
