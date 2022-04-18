@@ -4,7 +4,6 @@ vim.b.mapleader = ' '
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('', 'Y', 'y$', opts)
 map('n', '<C-L>', ':nohl<CR><C-L>', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
