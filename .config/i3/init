@@ -3,7 +3,7 @@
 clipdel -d ".*"
 clipmenud &
 playerctld daemon &
-feh --bg-scale Pictures/wallpapers/space.png --no-fehbg --no-xinerama
+.config/fehbg &
 redshift -l 56:10 &
 pcmanfm -d &
 nm-applet &
