@@ -3,7 +3,7 @@
 clipdel -d ".*"
 clipmenud &
 playerctld daemon &
-feh --bg-fill Pictures/wallpapers/6bmj4y4wgfy01.jpg --no-fehbg
+.config/fehbg &
 redshift -l 56:10 &
 pcmanfm -d &
 nm-applet &
