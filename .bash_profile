@@ -1,7 +1,3 @@
-#
-# ~/.bash_profile
-#
-
 export XDG_CONFIG_HOME=$HOME/.config 
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share 
@@ -32,3 +28,4 @@ export CM_DIR=/tmp
 export PF_INFO="ascii title os kernel uptime pkgs memory"
 
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc" -- vt1
+[[ -f ~/.bashrc ]] && . ~/.bashrc
