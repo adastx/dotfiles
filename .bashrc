@@ -17,7 +17,7 @@ export VISUAL=vim
 export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
 alias sudo='doas'
-alias sudoedit='doas $EDITOR'
+alias sudoedit='doasedit'
 
 source '/usr/share/fzf/key-bindings.bash'
 source '/usr/share/fzf/completion.bash'
