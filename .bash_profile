@@ -27,5 +27,5 @@ export CM_SELECTIONS=clipboard
 export CM_DIR=/tmp
 export PF_INFO="ascii title os kernel uptime pkgs memory"
 
-[[ $(fgconsole 2>/dev/null) == 1 ]] && exec sx "$XDG_CONFIG_HOME/X11/xinitrc"
+[[ $(fgconsole 2>/dev/null) == 1 ]] && exec sx
 [[ -f ~/.bashrc ]] && . ~/.bashrc
