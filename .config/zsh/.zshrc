@@ -19,7 +19,7 @@ export VISUAL=vim
 export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
 alias sudo='doas'
-alias sudoedit='doas $EDITOR'
+alias sudoedit='doasedit'
 
 alias q='exit'
 alias c='clear'
