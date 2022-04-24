@@ -9,7 +9,7 @@ These configs are what I have personally configured over time using Arch and as 
 I try to keep my configs clean and self-explanatory, which is why you won't find many comments.
 
 I wouldn't recommend trying to clone the entire repo as not all dependencies are included.
-Instead, I'd recommend looking through the configs and yoinking whatever you find useful to use in your own dotfiles.
+Instead, I'd recommend looking through the configs and yoinking whatever you find useful for your own dotfiles.
 
 ## What's here?
 
