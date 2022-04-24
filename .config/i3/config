@@ -141,7 +141,7 @@ title_align center
 smart_gaps on
 hide_edge_borders smart
 popup_during_fullscreen smart
-focus_follows_mouse yes
+focus_follows_mouse no
 
 
 ##### Force floating windows
