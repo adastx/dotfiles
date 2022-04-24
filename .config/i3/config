@@ -17,7 +17,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
-bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/extra/screenshot
+bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/screenshot
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
@@ -143,7 +143,7 @@ title_align center
 smart_gaps on
 hide_edge_borders smart
 popup_during_fullscreen smart
-focus_follows_mouse yes
+focus_follows_mouse no
 
 
 ##### Force floating windows

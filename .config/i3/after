@@ -1,5 +1,5 @@
 #!/bin/sh
 
-$XDG_CONFIG_HOME/i3/extra/no-rgb
+~/.local/bin/no-rgb
 xset r rate 300 25
 setxkbmap -option grp:win_space_toggle us,dk
