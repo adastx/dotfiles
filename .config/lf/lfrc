@@ -2,6 +2,7 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
+set hidden
 
 set previewer stpv
 set cleaner stpvimgclr
