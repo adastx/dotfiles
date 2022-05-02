@@ -172,6 +172,15 @@ local plugins = {
             require "colorizer".setup()
         end,
     },
+
+    {
+        'iamcco/markdown-preview.nvim',
+        cmd = { "MarkdownPreview" },
+        ft = {'markdown'},
+        run = function() 
+            vim.fn['mkdp#util#install']() 
+        end,
+    },
 }
 
 return packer.startup(function(use)
