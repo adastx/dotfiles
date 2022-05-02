@@ -5,7 +5,7 @@ Managed using the method explained [here](https://www.atlassian.com/git/tutorial
 
 ## Disclaimer
 
-These configs are what I have personally configured over time using Arch and as such do only what I need and nothing more.
+These configs are what I have personally configured over time and as such do only what I need and nothing more.
 I try to keep my configs clean and self-explanatory, which is why you won't find many comments.
 
 I wouldn't recommend trying to clone the entire repo as not all dependencies are included.
