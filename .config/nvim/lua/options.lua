@@ -34,6 +34,7 @@ set.pumblend = 0
 set.splitright = true
 set.splitbelow = true
 set.cursorline = true
+set.laststatus = 3
 
 -- Disable default vim plugins
 local disabled_built_ins = {
