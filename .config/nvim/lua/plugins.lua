@@ -42,8 +42,24 @@ local plugins = {
     },
 
     {
+        "akinsho/bufferline.nvim",
+        after = "nvim-web-devicons",
+        config = function()
+            require "setup.bufferline"
+        end,
+    },
+
+    {
+        "kyazdani42/nvim-tree.lua",
+        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+        config = function()
+            require "setup.nvim-tree"
+        end,
+    },
+
+    {
         "lukas-reineke/indent-blankline.nvim",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.indent-blankline"
         end,
@@ -51,7 +67,7 @@ local plugins = {
 
     {
         "nvim-treesitter/nvim-treesitter",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.nvim-treesitter"
         end,
@@ -60,7 +76,7 @@ local plugins = {
 
     {
         "lewis6991/gitsigns.nvim",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
         wants = "plenary.nvim",
         config = function()
             require('gitsigns').setup()
@@ -71,14 +87,14 @@ local plugins = {
 
     {
         "neovim/nvim-lspconfig",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
     },
 
     {
         "williamboman/nvim-lsp-installer",
         after = "nvim-lspconfig",
         config = function()
-            require "setup.nvim-lsp-installer"
+            require "setup.lspconfig"
         end,
     },
 
@@ -128,18 +144,18 @@ local plugins = {
         "windwp/nvim-autopairs",
         after = "nvim-cmp",
         config = function()
-            require('nvim-autopairs').setup{}
+            require('nvim-autopairs').setup {}
         end,
     },
 
     {
         "tpope/vim-surround",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
     },
 
     {
         "b3nj5m1n/kommentary",
-        event = { "BufRead" , "BufNewFile" },
+        event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.kommentary"
         end,
@@ -175,10 +191,9 @@ local plugins = {
 
     {
         'iamcco/markdown-preview.nvim',
-        cmd = { "MarkdownPreview" },
-        ft = {'markdown'},
-        run = function() 
-            vim.fn['mkdp#util#install']() 
+        ft = "markdown",
+        run = function()
+            vim.fn['mkdp#util#install']()
         end,
     },
 }
