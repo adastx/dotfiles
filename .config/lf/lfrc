@@ -3,6 +3,7 @@ set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
 set hidden
+set icons
 
 set previewer stpv
 set cleaner stpvimgclr
