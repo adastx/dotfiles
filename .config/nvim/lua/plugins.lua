@@ -51,6 +51,7 @@ local plugins = {
 
     {
         "kyazdani42/nvim-tree.lua",
+        branch = "1221-handle-deprecated-VertSplit",
         cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
         config = function()
             require "setup.nvim-tree"
