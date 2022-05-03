@@ -14,7 +14,7 @@ set.hlsearch = true
 set.ignorecase = true
 set.smartcase = true
 set.incsearch = true
-set.backspace= 'indent,eol,start'
+set.backspace = 'indent,eol,start'
 set.pastetoggle = '<F11>'
 set.confirm = true
 set.number = true
@@ -34,7 +34,6 @@ set.pumblend = 0
 set.splitright = true
 set.splitbelow = true
 set.cursorline = true
-set.laststatus = 3
 
 -- Disable default vim plugins
 local disabled_built_ins = {
