@@ -29,9 +29,7 @@ alias nf='pfetch'
 alias t='todo.sh'
 
 alias ls='exa'
-alias l='ls -1'
-alias la='ls -1a'
-alias ll='ls -la'
+alias l='ls -la'
 alias lt='ls -T'
 alias lh="ls -1dI '.|..' .*"
 
