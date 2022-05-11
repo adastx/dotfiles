@@ -3,7 +3,7 @@
 clipdel -d ".*"
 clipmenud &
 playerctld daemon &
-.config/fehbg &
+nitrogen --restore &
 redshift -l 56:10 &
 pcmanfm -d &
 nm-applet &
