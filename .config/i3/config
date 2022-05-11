@@ -152,7 +152,12 @@ for_window [class="floating_window"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="About"] floating enable
 
-for_window [window_role="gnome-calculator"] floating enable
+for_window [class="gnome-calculator"] floating enable
+for_window [class="baobab"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Piper"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Pcmanfm"] floating enable
 for_window [title="GNOME Tweaks"] floating enable
 for_window [title="Nitrogen"] floating enable
 for_window [title="Network Connections"] floating enable
