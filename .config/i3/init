@@ -5,7 +5,6 @@ clipmenud &
 playerctld daemon &
 nitrogen --restore &
 redshift -l 56:10 &
-pcmanfm -d &
 nm-applet &
 exec i3 & wmpid=$!
 
