@@ -50,6 +50,7 @@ function zvm_after_init() {
     bindkey '^ ' autosuggest-accept
     bindkey '\e.' insert-last-word
 }
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
