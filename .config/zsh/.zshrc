@@ -18,6 +18,8 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
+precmd () {print -Pn "\e]0;%n@%m:%~\a"}
+
 alias sudo='doas'
 alias sudoedit='doasedit'
 
