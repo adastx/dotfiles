@@ -3,9 +3,7 @@ set $alt Mod1
 floating_modifier $mod
 
 ##### Bindings 
-
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
@@ -17,6 +15,7 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
 bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/screenshot
+bindsym $mod+Shift+c exec --no-startup-id ~/.local/bin/picom-toggle
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
