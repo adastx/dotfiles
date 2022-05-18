@@ -10,7 +10,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm=" 
 
-bindsym $mod+Escape exec --no-startup-id betterlockscreen --suspend
+bindsym $mod+Escape exec --no-startup-id systemctl suspend
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
