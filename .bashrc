@@ -14,7 +14,14 @@ PATH="$HOME/.dotnet/tools:$PATH"
 export PATH
 export EDITOR=vim
 export VISUAL=vim
-export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
+export PAGER="less -i -j.5 -R"
+
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
 
 alias sudo='doas'
 alias sudoedit='doasedit'
