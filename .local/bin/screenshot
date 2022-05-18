@@ -1,4 +1,17 @@
 #!/bin/sh
 
-sleep 0.2
-scrot --line mode=edge -s -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
+if [ ! -n "$1" ]; then
+    scrot -q 100 -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
+fi
+
+while [ -n "$1" ]; do # while loop starts
+    case "$1" in
+        -s) 
+            sleep 0.2
+            scrot --line mode=edge -i -s -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/' 
+            ;;
+        *) echo "Option $1 not recognized" ;;
+    esac
+    shift
+done
+

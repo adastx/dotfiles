@@ -16,8 +16,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+f fullscreen toggle
 bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
-bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/screenshot
-bindsym Print exec --no-startup-id ~/.local/bin/printscreen
+bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/screenshot -s
+bindsym Print exec --no-startup-id ~/.local/bin/screenshot
 bindsym $mod+Shift+c exec --no-startup-id ~/.local/bin/picom-toggle
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}

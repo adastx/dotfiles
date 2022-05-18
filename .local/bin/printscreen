@@ -1,3 +1,0 @@
-#!/bin/sh
-
-scrot -q 100 -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
