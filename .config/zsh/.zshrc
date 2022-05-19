@@ -4,6 +4,8 @@ SAVEHIST=5000
 setopt hist_ignore_all_dups
 unsetopt beep
 
+precmd () {print -Pn "\e]0;%n@%m:%~\a"}
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 autoload -Uz compinit 
@@ -17,17 +19,13 @@ export PATH
 export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -i -j.5 -R"
-# export PAGER="less -i -j.5 -R --use-color -Dd+y -Du+c"
 
 export LESS_TERMCAP_mb=$'\E[1;31m'
 export LESS_TERMCAP_md=$'\E[1;31m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_ue=$'\E[0m'
-# export LESS_TERMCAP_so=$'\E[1;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
-
-precmd () {print -Pn "\e]0;%n@%m:%~\a"}
 
 alias sudo='doas'
 alias sudoedit='doasedit'
