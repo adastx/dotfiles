@@ -8,7 +8,7 @@ while [ -n "$1" ]; do # while loop starts
     case "$1" in
         -s) 
             sleep 0.2
-            scrot --line mode=edge -i -s -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/' 
+            scrot -l mode=edge -i -s -e 'xclip -sel clip -t image/png $f; mv $f ~/Pictures/screenshots/' 
             ;;
         *) echo "Option $1 not recognized" ;;
     esac
