@@ -25,4 +25,11 @@ export CM_DIR=/tmp
 export PF_INFO="ascii title os kernel uptime pkgs memory"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
+
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx $XDG_CONFIG_HOME/X11/xinitrc -- vt1  &> /dev/null
