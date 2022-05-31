@@ -1,6 +1,4 @@
-if not table.unpack then
-    table.unpack = unpack
-end
+table.unpack = table.unpack or unpack -- 5.1 compatibility
 
 local has_words_before = function()
     local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
