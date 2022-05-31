@@ -191,6 +191,6 @@ for_window [title="^Steam Keyboard$"] floating enable
 
 ##### Exec
 exec --no-startup-id /usr/bin/unclutter -b
-exec --no-startup-id $HOME/.config/polybar/launch
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b 
+exec --no-startup-id ~/.local/bin/polybar-launch
+exec --no-startup-id ~/.local/bin/picom-toggle
 exec --no-startup-id nextcloud --background
