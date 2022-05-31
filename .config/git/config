@@ -10,12 +10,12 @@
 
 [delta]
     syntax-theme = TwoDark
+    diff-so-fancy = true
     commit-decoration-style = yellow ol
-    hunk-header-decoration-style = magenta box
-    hunk-header-style = syntax file line-number
     file-style = omit
-    plus-style = syntax "#003800"
-    minus-style = syntax "#3f0001"
 
 [merge]
     conflictstyle = diff3
+
+[diff]
+    colorMoved = default
