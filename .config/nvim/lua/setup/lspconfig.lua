@@ -24,6 +24,14 @@ lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
 }
 
+-- local pid = vim.fn.getpid()
+-- local omnisharp_bin = "mono /home/adam/.local/share/nvim/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe"
+lspconfig.omnisharp.setup {
+    use_mono = true,
+    on_attach = on_attach,
+    -- cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+}
+
 -- vim.cmd("let g:tex_flavor = 'tex'")
 -- lspconfig.texlab.setup {
 --     on_attach = on_attach,
