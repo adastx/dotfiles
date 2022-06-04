@@ -46,7 +46,7 @@ alias nvimrc='cd $XDG_CONFIG_HOME/nvim;nvim'
 alias i3config='vim $XDG_CONFIG_HOME/i3/config'
 alias startup='vim $XDG_CONFIG_HOME/X11/xinitrc'
 
-eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+eval "$(starship init bash)"
 
 pfetch
