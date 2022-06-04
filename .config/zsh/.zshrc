@@ -54,8 +54,8 @@ function zvm_after_init() {
 }
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 source '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
 source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
