@@ -1,1 +1,32 @@
+set default-bg              "#282c34"
+set statusbar-bg            "#1A2128"
+
+set inputbar-bg             "#141A1F"
+set inputbar-fg             "#A6B5C5"
+
+set notification-error-bg   "#EC5252"
+set notification-error-fg   "#141A1F"
+
+set notification-warning-bg "#EC5252"
+set notification-warning-fg "#141A1F"
+
+set highlight-active-color  "#EC5252"
+
+set completion-highlight-fg "#13AFAF"
+set completion-highlight-bg "#141A1F"
+
+set completion-bg           "#141A1F"
+set completion-fg           "#A6B5C5"
+
+set notification-bg         "#A6B5C5"
+set notification-fg         "#141A1F"
+
+set recolor-lightcolor      "#282c34"
+set recolor-reverse-video   true
+
 set selection-clipboard clipboard
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map i recolor
+map g goto top
