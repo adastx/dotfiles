@@ -35,6 +35,7 @@ set.splitright = true
 set.splitbelow = true
 set.cursorline = true
 set.signcolumn = 'yes'
+set.title = true
 
 -- Disable default vim plugins
 local disabled_built_ins = {
