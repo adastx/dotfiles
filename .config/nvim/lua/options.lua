@@ -34,7 +34,7 @@ set.pumblend = 0
 set.splitright = true
 set.splitbelow = true
 set.cursorline = true
-set.signcolumn = 'yes'
+-- set.signcolumn = 'yes'
 set.title = true
 
 -- Disable default vim plugins
