@@ -41,13 +41,13 @@ local plugins = {
         end,
     },
 
-    {
-        "akinsho/bufferline.nvim",
-        after = "nvim-web-devicons",
-        config = function()
-            require "setup.bufferline"
-        end,
-    },
+    -- {
+    --     "akinsho/bufferline.nvim",
+    --     after = "nvim-web-devicons",
+    --     config = function()
+    --         require "setup.bufferline"
+    --     end,
+    -- },
 
     {
         "kyazdani42/nvim-tree.lua",
