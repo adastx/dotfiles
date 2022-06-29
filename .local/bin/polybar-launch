@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Terminate already running bar instances
 killall -q polybar
-
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar bar1 -r 2>&1 | tee -a /tmp/polybar1.log & 
-polybar bar2 -r 2>&1 | tee -a /tmp/polybar2.log & 
-
-echo "Bars launched..."
+polybar bar1 -r 2>&1 | tee -a /tmp/polybar1.log & disown
+polybar bar2 -r 2>&1 | tee -a /tmp/polybar2.log & disown
