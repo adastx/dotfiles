@@ -17,3 +17,8 @@ cmd open ${{
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+
+cmd on-cd &{{
+   printf "\033]0; $(pwd | sed "s|$HOME|~|") - lf\007" > /dev/tty
+}}
+on-cd
