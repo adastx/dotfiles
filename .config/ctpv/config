@@ -1,0 +1,3 @@
+preview markdown .md {{
+    glow -w $(("$w" - 2)) -s dark "$f"
+}}
