@@ -24,7 +24,7 @@ local plugins = {
         "adastx/onedark.nvim",
         after = "packer.nvim",
         config = function()
-            require('onedark').load()
+            require 'setup.onedark'
         end,
     },
 
