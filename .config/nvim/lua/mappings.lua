@@ -33,6 +33,8 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 
+map('n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<cr>', opts)
+map('n', '<leader>ws', '<cmd>Telescope lsp_workspace_symbols<cr>', opts)
 map('n', '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', opts)
 map('n', '<leader>gD', '<cmd>Telescope lsp_declarations<cr>', opts)
 map('n', '<leader>gr', '<cmd>Telescope lsp_references<cr>', opts)
