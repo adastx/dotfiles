@@ -19,6 +19,7 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export SSB_HOME="$XDG_DATA_HOME"/zoom
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export CM_LAUNCHER=rofi
 export CM_SELECTIONS=clipboard
 export CM_DIR=/tmp
