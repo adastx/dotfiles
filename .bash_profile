@@ -25,6 +25,7 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel ${_JAVA_OPTIONS}"
 export SSB_HOME="$XDG_DATA_HOME"/zoom
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export CM_LAUNCHER=rofi
 export CM_SELECTIONS=clipboard
 export CM_DIR=/tmp
