@@ -11,7 +11,7 @@
 [delta]
     syntax-theme = TwoDark
     diff-so-fancy = true
-    commit-decoration-style = yellow ol
+    navigate = true
     file-style = omit
 
 [merge]
