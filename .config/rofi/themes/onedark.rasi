@@ -29,7 +29,7 @@ inputbar {
     children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 prompt {
-    text-color: var(blue);
+    text-color: var(red);
 }
 textbox-prompt-colon {
     expand:     false;
