@@ -1,6 +1,6 @@
 HISTFILE=$ZDOTDIR/history
-HISTSIZE=1000
-SAVEHIST=5000
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
 unsetopt beep
 
