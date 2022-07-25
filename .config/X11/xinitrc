@@ -44,4 +44,5 @@ nextcloud --background &
 ~/.local/bin/picom-toggle &
 ~/.local/bin/no-rgb &
 ~/.local/bin/rate &
+~/.local/bin/screensaver &
 exec i3
