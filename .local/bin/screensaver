@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# xset -dpms
+xset s off
+
+xidlehook \
+    --detect-sleep --not-when-audio --not-when-fullscreen \
+    --timer 300 'betterlockscreen -l' '' \
+    --timer 300 'systemctl suspend' '' &

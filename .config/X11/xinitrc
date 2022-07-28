@@ -42,4 +42,5 @@ unclutter -b &
 nextcloud --background &
 ~/.local/bin/picom-toggle &
 ~/.local/bin/rate &
+~/.local/bin/screensaver &
 exec i3
