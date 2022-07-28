@@ -2,8 +2,8 @@
 [[ $- != *i* ]] && return
 
 HISTCONTROL=ignoreboth:erasedups
-HISTSIZE=1000
-HISTFILESIZE=5000
+HISTSIZE=100000
+HISTFILESIZE=$HISTSIZE
 
 shopt -s histappend
 shopt -s checkwinsize
