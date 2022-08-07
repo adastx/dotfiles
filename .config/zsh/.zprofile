@@ -28,7 +28,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.lua" | so $MYVIMRC'
 
 export LESS_TERMCAP_mb=$'\E[1;31m'
-export LESS_TERMCAP_md=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;36m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
