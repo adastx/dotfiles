@@ -165,6 +165,7 @@ for_window [class="GParted"] floating enable
 for_window [title="GNOME Tweaks"] floating enable
 for_window [title="Nitrogen"] floating enable
 for_window [title="Network Connections"] floating enable
+for_window [class="Nextcloud"] floating enable
 
 # Jetbrains
 for_window [class="^com-intellij-updater-Runner$" title="^Update$"] floating enable
