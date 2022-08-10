@@ -4,3 +4,4 @@ Xcursor.theme: phinger-cursors-light
 Nsxiv.window.background: #282c34
 Nsxiv.window.foreground: #a8b4bb
 Nsxiv.bar.background: #31353f
+Nsxiv.bar.font: JetBrainsMono Nerd Font
