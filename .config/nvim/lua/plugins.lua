@@ -1,47 +1,46 @@
-local packer = require("packer")
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    Packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
+    vim.cmd [[packadd packer.nvim]]
+end
 
-local plugins = {
-    { "nathom/filetype.nvim" },
+return require('packer').startup(function(use)
 
-    {
-        "nvim-lua/plenary.nvim",
+    use { "wbthomason/packer.nvim" }
+
+    use { "nathom/filetype.nvim" }
+
+    use { "nvim-lua/plenary.nvim",
         opt = true,
-    },
+    }
 
-    {
-        "lewis6991/impatient.nvim",
+    use { "lewis6991/impatient.nvim",
         config = function()
             require("impatient")
         end,
-    },
+    }
 
-    {
-        "wbthomason/packer.nvim",
+    use { "adastx/onedark.nvim",
         event = "VimEnter",
-    },
-
-    {
-        "adastx/onedark.nvim",
-        after = "packer.nvim",
         config = function()
             require 'setup.onedark'
         end,
-    },
+    }
 
-    {
-        "kyazdani42/nvim-web-devicons",
+    use { "kyazdani42/nvim-web-devicons",
         after = "onedark.nvim"
-    },
+    }
 
-    {
-        "nvim-lualine/lualine.nvim",
+    use { "nvim-lualine/lualine.nvim",
         after = "nvim-web-devicons",
         config = function()
             require "setup.lualine"
         end,
-    },
+    }
 
-    -- {
+    -- use {
     --     "akinsho/bufferline.nvim",
     --     after = "nvim-web-devicons",
     --     config = function()
@@ -49,157 +48,135 @@ local plugins = {
     --     end,
     -- },
 
-    {
-        "kyazdani42/nvim-tree.lua",
+    use { "kyazdani42/nvim-tree.lua",
         cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
         config = function()
             require "setup.nvim-tree"
         end,
-    },
+    }
 
-    {
-        "lukas-reineke/indent-blankline.nvim",
+    use { "lukas-reineke/indent-blankline.nvim",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.indent-blankline"
         end,
-    },
+    }
 
-    {
-        "nvim-treesitter/nvim-treesitter",
+    use { "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.nvim-treesitter"
         end,
         run = ':TSUpdate',
-    },
+    }
 
-    {
-        "lewis6991/gitsigns.nvim",
+    use { "lewis6991/gitsigns.nvim",
         event = { "BufRead", "BufNewFile" },
         wants = "plenary.nvim",
         config = function()
             require('gitsigns').setup()
         end,
-    },
+    }
 
     -- lsp stuff
 
-    {
-        "neovim/nvim-lspconfig",
+    use { "neovim/nvim-lspconfig",
         event = { "BufRead", "BufNewFile" },
-    },
+    }
 
-    {
-        "williamboman/nvim-lsp-installer",
+    use { "williamboman/nvim-lsp-installer",
         after = "nvim-lspconfig",
         config = function()
             require "setup.lspconfig"
         end,
-    },
+    }
 
-    {
-        "ray-x/lsp_signature.nvim",
+    use { "ray-x/lsp_signature.nvim",
         after = "nvim-lspconfig",
         config = function()
             require "setup.lsp_signature"
         end
-    },
+    }
 
     -- load luasnips + cmp related when lsp attaches
 
-    {
-        "L3MON4D3/LuaSnip",
+    use { "L3MON4D3/LuaSnip",
         wants = "friendly-snippets",
         event = "User lspAttached",
         config = function()
             require("luasnip/loaders/from_vscode").lazy_load()
         end,
-    },
+    }
 
-    {
-        "rafamadriz/friendly-snippets",
+    use { "rafamadriz/friendly-snippets",
         module = "cmp_nvim_lsp",
-    },
+    }
 
-    {
-        "hrsh7th/nvim-cmp",
+    use { "hrsh7th/nvim-cmp",
         after = "LuaSnip",
         config = function()
             require "setup.nvim-cmp"
         end,
-    },
+    }
 
-    {
-        "saadparwaiz1/cmp_luasnip",
+    use { "saadparwaiz1/cmp_luasnip",
         after = { "LuaSnip", "nvim-cmp" }
-    },
+    }
 
-    {
-        "hrsh7th/cmp-nvim-lsp",
+    use { "hrsh7th/cmp-nvim-lsp",
         after = "cmp_luasnip",
-    },
+    }
 
-    {
-        "windwp/nvim-autopairs",
+    use { "windwp/nvim-autopairs",
         after = "nvim-cmp",
         config = function()
             require('nvim-autopairs').setup {}
         end,
-    },
+    }
 
-    {
-        "tpope/vim-surround",
+    use { "tpope/vim-surround",
         event = { "BufRead", "BufNewFile" },
-    },
+    }
 
-    {
-        "b3nj5m1n/kommentary",
+    use { "b3nj5m1n/kommentary",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.kommentary"
         end,
-    },
+    }
 
-    {
-        "BurntSushi/ripgrep",
+    use { "BurntSushi/ripgrep",
         opt = true,
-    },
+    }
 
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
+    use { "nvim-telescope/telescope-fzf-native.nvim",
         opt = true,
-    },
+    }
 
-    {
-        "nvim-telescope/telescope.nvim",
+    use { "nvim-telescope/telescope.nvim",
         module = "telescope",
         cmd = "Telescope",
         wants = { "ripgrep", "telescope-fzf-native.nvim", "plenary.nvim" },
         config = function()
             require "setup.telescope"
         end
-    },
+    }
 
-    {
-        "norcalli/nvim-colorizer.lua",
+    use { "norcalli/nvim-colorizer.lua",
         cmd = { "ColorizerToggle" },
         config = function()
             require "colorizer".setup()
         end,
-    },
+    }
 
-    {
-        'iamcco/markdown-preview.nvim',
+    use { 'iamcco/markdown-preview.nvim',
         ft = "markdown",
         run = function()
             vim.fn['mkdp#util#install']()
         end,
-    },
-}
+    }
 
-return packer.startup(function(use)
-    for _, v in pairs(plugins) do
-        use(v)
+    if Packer_bootstrap then
+        require('packer').sync()
     end
 end)
