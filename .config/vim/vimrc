@@ -15,7 +15,16 @@ set directory=$XDG_CACHE_HOME/vim/swap   | call mkdir(&directory, 'p')
 set undodir=$XDG_CACHE_HOME/vim/undo     | call mkdir(&undodir,   'p')
 set undofile
 
-call plug#begin('~/.config/vim/plugged')
+let data_dir = '$XDG_DATA_HOME/vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+call plug#begin(data_dir . '/plugged')
     Plug 'romgrk/doom-one.vim'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
