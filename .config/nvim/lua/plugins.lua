@@ -12,28 +12,33 @@ return require('packer').startup(function(use)
 
     use { "nathom/filetype.nvim" }
 
-    use { "nvim-lua/plenary.nvim",
+    use {
+        "nvim-lua/plenary.nvim",
         opt = true,
     }
 
-    use { "lewis6991/impatient.nvim",
+    use {
+        "lewis6991/impatient.nvim",
         config = function()
             require("impatient")
         end,
     }
 
-    use { "adastx/onedark.nvim",
+    use {
+        "adastx/onedark.nvim",
         event = "VimEnter",
         config = function()
             require 'setup.onedark'
         end,
     }
 
-    use { "kyazdani42/nvim-web-devicons",
+    use {
+        "kyazdani42/nvim-web-devicons",
         after = "onedark.nvim"
     }
 
-    use { "nvim-lualine/lualine.nvim",
+    use {
+        "nvim-lualine/lualine.nvim",
         after = "nvim-web-devicons",
         config = function()
             require "setup.lualine"
@@ -48,21 +53,24 @@ return require('packer').startup(function(use)
     --     end,
     -- },
 
-    use { "kyazdani42/nvim-tree.lua",
+    use {
+        "kyazdani42/nvim-tree.lua",
         cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
         config = function()
             require "setup.nvim-tree"
         end,
     }
 
-    use { "lukas-reineke/indent-blankline.nvim",
+    use {
+        "lukas-reineke/indent-blankline.nvim",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.indent-blankline"
         end,
     }
 
-    use { "nvim-treesitter/nvim-treesitter",
+    use {
+        "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.nvim-treesitter"
@@ -70,7 +78,8 @@ return require('packer').startup(function(use)
         run = ':TSUpdate',
     }
 
-    use { "lewis6991/gitsigns.nvim",
+    use {
+        "lewis6991/gitsigns.nvim",
         event = { "BufRead", "BufNewFile" },
         wants = "plenary.nvim",
         config = function()
@@ -80,18 +89,21 @@ return require('packer').startup(function(use)
 
     -- lsp stuff
 
-    use { "neovim/nvim-lspconfig",
+    use {
+        "neovim/nvim-lspconfig",
         event = { "BufRead", "BufNewFile" },
     }
 
-    use { "williamboman/nvim-lsp-installer",
+    use {
+        "williamboman/nvim-lsp-installer",
         after = "nvim-lspconfig",
         config = function()
             require "setup.lspconfig"
         end,
     }
 
-    use { "ray-x/lsp_signature.nvim",
+    use {
+        "ray-x/lsp_signature.nvim",
         after = "nvim-lspconfig",
         config = function()
             require "setup.lsp_signature"
@@ -100,7 +112,8 @@ return require('packer').startup(function(use)
 
     -- load luasnips + cmp related when lsp attaches
 
-    use { "L3MON4D3/LuaSnip",
+    use {
+        "L3MON4D3/LuaSnip",
         wants = "friendly-snippets",
         event = "User lspAttached",
         config = function()
@@ -108,52 +121,62 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use { "rafamadriz/friendly-snippets",
+    use {
+        "rafamadriz/friendly-snippets",
         module = "cmp_nvim_lsp",
     }
 
-    use { "hrsh7th/nvim-cmp",
+    use {
+        "hrsh7th/nvim-cmp",
         after = "LuaSnip",
         config = function()
             require "setup.nvim-cmp"
         end,
     }
 
-    use { "saadparwaiz1/cmp_luasnip",
+    use {
+        "saadparwaiz1/cmp_luasnip",
         after = { "LuaSnip", "nvim-cmp" }
     }
 
-    use { "hrsh7th/cmp-nvim-lsp",
+    use {
+        "hrsh7th/cmp-nvim-lsp",
         after = "cmp_luasnip",
     }
 
-    use { "windwp/nvim-autopairs",
+    use {
+        "windwp/nvim-autopairs",
         after = "nvim-cmp",
         config = function()
             require('nvim-autopairs').setup {}
         end,
     }
 
-    use { "tpope/vim-surround",
+    use {
+        "tpope/vim-surround",
         event = { "BufRead", "BufNewFile" },
     }
 
-    use { "b3nj5m1n/kommentary",
+    use {
+        "b3nj5m1n/kommentary",
         event = { "BufRead", "BufNewFile" },
         config = function()
             require "setup.kommentary"
         end,
     }
 
-    use { "BurntSushi/ripgrep",
+    use {
+        "BurntSushi/ripgrep",
         opt = true,
     }
 
-    use { "nvim-telescope/telescope-fzf-native.nvim",
+    use {
+        "nvim-telescope/telescope-fzf-native.nvim",
         opt = true,
     }
 
-    use { "nvim-telescope/telescope.nvim",
+    use {
+        "nvim-telescope/telescope.nvim",
         module = "telescope",
         cmd = "Telescope",
         wants = { "ripgrep", "telescope-fzf-native.nvim", "plenary.nvim" },
@@ -162,14 +185,15 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { "norcalli/nvim-colorizer.lua",
+    use {
+        "norcalli/nvim-colorizer.lua",
         cmd = { "ColorizerToggle" },
         config = function()
             require "colorizer".setup()
         end,
     }
 
-    use { 'iamcco/markdown-preview.nvim',
+    use { "iamcco/markdown-preview.nvim",
         ft = "markdown",
         run = function()
             vim.fn['mkdp#util#install']()
