@@ -38,7 +38,7 @@ alias lg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 
 alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
 alias cs='config status'
-alias clg="config log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias clg="config log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)' --all"
 
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim $XDG_CONFIG_HOME/vim/vimrc'
