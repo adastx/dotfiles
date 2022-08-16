@@ -1,5 +1,9 @@
+set font "JetBrainsMono Nerd Font 10"
+
 set default-bg              "#282c34"
-set statusbar-bg            "#1A2128"
+
+set statusbar-bg            "#31353f"
+set statusbar-fg            "#a8b4bb"
 
 set inputbar-bg             "#141A1F"
 set inputbar-fg             "#A6B5C5"
