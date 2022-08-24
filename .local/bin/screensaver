@@ -1,9 +1,0 @@
-#!/bin/sh
-
-xset -dpms 
-xset s off
-
-xidlehook \
-    --detect-sleep --not-when-audio --not-when-fullscreen \
-    --timer 600 'xset s activate' '' \
-    --timer 600 'systemctl suspend' '' &

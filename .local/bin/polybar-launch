@@ -1,5 +1,0 @@
-#!/bin/sh
-
-killall -q polybar
-polybar bar1 -r 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar bar2 -r 2>&1 | tee -a /tmp/polybar2.log & disown

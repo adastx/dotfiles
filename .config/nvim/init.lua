@@ -1,5 +1,0 @@
-require('pre')
-require('plugins')
-require('options')
-require('mappings')
-require('post')

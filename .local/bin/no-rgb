@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ "$USER" == "adam" ]; then
-    openrgb -p no-rgb
-else
-    USER=adam
-    su $USER -c "openrgb -p no-rgb"
-fi
