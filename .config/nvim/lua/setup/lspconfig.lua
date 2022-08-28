@@ -19,23 +19,41 @@ lspconfig.sumneko_lua.setup {
         }
     }
 }
-
 lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
 }
-
--- local pid = vim.fn.getpid()
--- local omnisharp_bin = "mono /home/adam/.local/share/nvim/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe"
-lspconfig.omnisharp.setup {
-    use_mono = true,
+lspconfig.bashls.setup {
     on_attach = on_attach,
-    -- cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
 }
-
--- vim.cmd("let g:tex_flavor = 'tex'")
--- lspconfig.texlab.setup {
---     on_attach = on_attach,
--- }
+lspconfig.dockerls.setup {
+    on_attach = on_attach,
+}
+lspconfig.yamlls.setup {
+    on_attach = on_attach,
+}
+lspconfig.html.setup {
+    on_attach = on_attach,
+}
+lspconfig.cssls.setup {
+    on_attach = on_attach,
+}
+lspconfig.marksman.setup {
+    on_attach = on_attach,
+}
+lspconfig.jsonls.setup {
+    on_attach = on_attach,
+}
+lspconfig.tsserver.setup {
+    on_attach = on_attach,
+}
+lspconfig.omnisharp.setup {
+    on_attach = on_attach,
+    use_mono = true,
+}
+lspconfig.texlab.setup {
+    on_attach = on_attach,
+}
+vim.cmd("let g:tex_flavor = 'tex'")
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
