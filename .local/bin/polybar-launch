@@ -1,5 +1,9 @@
 #!/bin/sh
 
-killall -q polybar
-polybar bar1 -r 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar bar2 -r 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar-msg cmd quit
+
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar bar1 >> /tmp/polybar1.log 2>&1 & disown
+polybar bar2 >> /tmp/polybar2.log 2>&1 & disown
+
+echo "Bars launched..."
