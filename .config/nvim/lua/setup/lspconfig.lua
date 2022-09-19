@@ -19,6 +19,12 @@ lspconfig.sumneko_lua.setup {
         }
     }
 }
+lspconfig.hls.setup {
+    on_attach = on_attach,
+}
+lspconfig.pyright.setup {
+    on_attach = on_attach,
+}
 lspconfig.clangd.setup {
     on_attach = on_attach,
 }
