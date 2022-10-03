@@ -1,7 +1,8 @@
 #show-read-feeds no
 auto-reload yes
-reload-threads 4
+reload-threads 20
 max-items 50
+text-width 74
 prepopulate-query-feeds yes
 
 bind-key LEFT quit
