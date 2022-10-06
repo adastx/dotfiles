@@ -1,0 +1,57 @@
+#!/bin/bash
+
+main () {
+    if [ ! -n "$1" ]; then
+        help
+    fi
+
+    while [ -n "$1" ]; do # while loop starts
+        case "$1" in
+            -d) 
+                dock; break ;;
+            -u) 
+                undock; break ;;
+            -h|--help)
+                help ;;
+            *) 
+                usage; echo "error: unrecognized arguments: $1" ; exit 1 ;;
+        esac
+        shift
+    done
+}
+
+usage () {
+    echo "usage: dock [options]"
+}
+
+help () {
+    usage
+    echo
+    echo "Toggle laptop between regular and 'docked' modes"
+    echo
+    echo "options:"
+    echo "  -h, --help            show this help message and exit"
+    echo "  -d                    dock laptop"
+    echo "  -u                    undock laptop"
+}
+
+dock () { 
+    echo "docking..." 
+
+    if ! xrandr | grep -q "HDMI-1 connected" ; then
+        echo "error: HDMI not connected"; exit 1
+    fi
+
+    xrandr --output HDMI-1 --mode 2560x1440 --rate 70 --primary --output eDP-1 --off 
+    nitrogen --save --set-centered Pictures/wallpapers/wave-center-docked.png
+    betterlockscreen -u Pictures/wallpapers/wave-center-docked.png
+}
+
+undock () {
+    echo "undocking..." 
+    xrandr --output eDP-1 --mode 1920x1080 --primary --output HDMI-1 --off
+    nitrogen --save --set-centered Pictures/wallpapers/wave-center.png
+    betterlockscreen -u Pictures/wallpapers/wave-center.png
+}
+
+main "$@"
