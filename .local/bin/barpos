@@ -1,0 +1,14 @@
+#!/bin/bash
+
+polybar_cfg=$XDG_CONFIG_HOME/polybar/config.ini 
+
+bottom_str="bottom = true"
+top_str="bottom = false"
+
+if grep -q "$bottom_str" $polybar_cfg; then
+    sed -i "s/$bottom_str/$top_str/" $polybar_cfg
+else
+    sed -i "s/$top_str/$bottom_str/" $polybar_cfg
+fi
+
+polybar-launch
