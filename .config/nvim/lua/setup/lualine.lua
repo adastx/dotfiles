@@ -7,7 +7,7 @@ local config = {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = { 'startify', 'terminal', 'netrw', 'NvimTree', 'packer' },
-        globalstatus = false,
+        globalstatus = true,
     },
     sections = {
         lualine_a = { 'mode' },
@@ -34,6 +34,7 @@ local config = {
 -- end
 
 local function ins_right(component)
+
     table.insert(config.sections.lualine_x, 1, component)
 end
 

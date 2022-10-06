@@ -34,8 +34,18 @@ set.pumblend = 0
 set.splitright = true
 set.splitbelow = true
 set.cursorline = true
--- set.signcolumn = 'yes'
+set.signcolumn = 'yes'
 set.title = true
+set.ch = 0
+set.winbar = '%=%m %f'
+
+vim.cmd([[
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+]])
 
 -- Disable default vim plugins
 local disabled_built_ins = {
