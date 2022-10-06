@@ -3,10 +3,11 @@ local lspconfig = require("lspconfig")
 
 local function on_attach()
     vim.cmd([[
-    doautocmd User lspAttached')
+    doautocmd User lspAttached
+
     augroup Format
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        au! * <buffer>
+        au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
     augroup END
     ]])
 end
