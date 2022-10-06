@@ -45,6 +45,8 @@ augroup CursorLine
     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 augroup END
+
+autocmd FileType TelescopePrompt setl nocursorline
 ]])
 
 -- Disable default vim plugins
