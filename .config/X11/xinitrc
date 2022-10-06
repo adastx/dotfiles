@@ -36,7 +36,7 @@ fi
 clipmenud &
 playerctld daemon &
 nitrogen --restore &
-redshift -l 56:10 -t 5700:4000 -m randr -v &
+redshift -l 55.7:12.6 -t 5700:4000 -g 0.9 -m randr -v &
 nm-applet &
 unclutter -b &
 nextcloud --background &

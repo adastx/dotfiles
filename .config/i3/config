@@ -26,6 +26,9 @@ bindsym $mod+p exec --no-startup-id rofi-pass
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
 bindsym XF86AudioMute exec --no-startup-id pamixer -t
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
@@ -130,7 +133,7 @@ bindsym $mod+r mode "Resize Mode"
 
 ##### Appearance
 
-font pango:Source Code Pro Medium 12
+font pango:Source Code Pro Medium 11
 
 gaps inner 5
 gaps outer 0
