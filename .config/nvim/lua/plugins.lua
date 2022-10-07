@@ -43,14 +43,6 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- use {
-    --     "akinsho/bufferline.nvim",
-    --     after = "nvim-web-devicons",
-    --     config = function()
-    --         require "setup.bufferline"
-    --     end,
-    -- },
-
     use {
         "kyazdani42/nvim-tree.lua",
         cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
@@ -85,8 +77,6 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- lsp stuff
-
     use {
         "neovim/nvim-lspconfig",
         event = { "BufRead", "BufNewFile" },
@@ -107,8 +97,6 @@ return require('packer').startup(function(use)
             require "setup.lsp_signature"
         end
     }
-
-    -- load luasnips + cmp related when lsp attaches
 
     use {
         "L3MON4D3/LuaSnip",
