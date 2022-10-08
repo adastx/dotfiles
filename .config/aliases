@@ -1,0 +1,30 @@
+#!/bin/bash
+
+alias vim="nvim"
+alias sudo='doas'
+alias sudoedit='doasedit'
+
+alias q='exit'
+alias c='clear'
+alias nf='pfetch'
+alias t='todo.sh'
+
+alias ls='exa'
+alias l='ls -la'
+alias lt='ls -T'
+alias lh="ls -1dI '.|..' .*"
+
+alias gs='git status'
+alias lg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+alias config='/usr/bin/git --git-dir=/home/adam/.cfg/ --work-tree=/home/adam'
+alias cs='config status'
+alias clg="config log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)' --all"
+
+alias shrc="nvim $HOME/.bashrc"
+alias vars="nvim $HOME/.bash_profile"
+alias wmrc="nvim $XDG_CONFIG_HOME/i3/config"
+alias vimrc="nvim --cmd ':cd $XDG_CONFIG_HOME/nvim/ | edit lua/plugins.lua'"
+alias initrc="nvim $XDG_CONFIG_HOME/X11/xinitrc"
+alias barconf="nvim $XDG_CONFIG_HOME/polybar/config.ini"
+alias aliases="nvim $XDG_CONFIG_HOME/aliases"
