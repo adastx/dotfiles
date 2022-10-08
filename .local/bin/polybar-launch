@@ -2,11 +2,5 @@
 
 polybar-msg cmd quit
 
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m 
-    LOG_FILE="/tmp/polybar.$m.log"
-    echo "---" >> $LOG_FILE
-    polybar bar1 >> $LOG_FILE 2>&1 & disown
-done
-
-echo "Bars launched..."
+echo "---" >> /tmp/polybar.log 
+polybar bar1 --reload >> /tmp/polybar.log 2>&1 & disown
