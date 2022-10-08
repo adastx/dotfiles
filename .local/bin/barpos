@@ -1,14 +1,59 @@
 #!/bin/bash
 
-polybar_cfg=$XDG_CONFIG_HOME/polybar/config.ini 
+BAR_CFG=$XDG_CONFIG_HOME/polybar/config.ini 
 
-bottom_str="bottom = true"
-top_str="bottom = false"
+BOTTOM="bottom = true"
+TOP="bottom = false"
 
-if grep -q "$bottom_str" $polybar_cfg; then
-    sed -i "s/$bottom_str/$top_str/" $polybar_cfg
-else
-    sed -i "s/$top_str/$bottom_str/" $polybar_cfg
-fi
+main () {
+    if [ ! -n "$1" ]; then
+        toggle
+    fi
 
-polybar-launch
+    while [ -n "$1" ]; do # while loop starts
+        case "$1" in
+            -b) 
+                bottom; break ;;
+            -t) 
+                top; break ;;
+            -h|--help)
+                help ; break ;;
+            *) 
+                usage; echo "error: unrecognized arguments: $1" ; exit 1 ;;
+        esac
+        shift
+    done
+}
+
+usage () {
+    echo "usage: barpos [options]"
+}
+
+help () {
+    usage
+    echo
+    echo "Toggles status bar position, or sets it as specified"
+    echo
+    echo "options:"
+    echo "  -h, --help            show this help message and exit"
+    echo "  -b                    bottom"
+    echo "  -t                    top"
+}
+
+toggle () {
+    if grep -q "$BOTTOM" $BAR_CFG; then
+        sed -i "s/$BOTTOM/$TOP/" $BAR_CFG
+    else
+        sed -i "s/$TOP/$BOTTOM/" $BAR_CFG
+    fi
+}
+
+bottom () {
+    sed -ir "s/bottom = .*$/bottom = true/" $BAR_CFG
+}
+
+top () {
+    sed -ir "s/bottom = .*$/bottom = false/" $BAR_CFG
+}
+
+main "$@"
