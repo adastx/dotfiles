@@ -27,31 +27,32 @@ usage () {
 help () {
     usage
     echo
-    echo "Toggle laptop between regular and 'docked' modes"
+    echo "Dock or undock laptop"
     echo
     echo "options:"
     echo "  -h, --help            show this help message and exit"
-    echo "  -d                    dock laptop"
-    echo "  -u                    undock laptop"
+    echo "  -d                    dock"
+    echo "  -u                    undock"
 }
 
 dock () { 
-    echo "docking..." 
-
     if ! xrandr | grep -q "HDMI-1 connected" ; then
         echo "error: HDMI not connected"; exit 1
     fi
 
-    xrandr --output HDMI-1 --mode 2560x1440 --rate 70 --primary --output eDP-1 --off 
-    nitrogen --save --set-centered Pictures/wallpapers/wave-center-docked.png
-    betterlockscreen -u Pictures/wallpapers/wave-center-docked.png
+    barpos -b
+    xrandr --output HDMI-1 --mode 2560x1440 --rate 70 --primary
+    xrandr --output eDP-1 --off 
+    xwallpaper --center $XDG_CONFIG_HOME/wallpaper/bg 
+    betterlockscreen -u $XDG_CONFIG_HOME/wallpaper/lock &>/dev/null &
 }
 
 undock () {
-    echo "undocking..." 
-    xrandr --output eDP-1 --mode 1920x1080 --primary --output HDMI-1 --off
-    nitrogen --save --set-centered Pictures/wallpapers/wave-center.png
-    betterlockscreen -u Pictures/wallpapers/wave-center.png
+    barpos -t
+    xrandr --output eDP-1 --mode 1920x1080 --primary
+    xrandr --output HDMI-1 --off
+    xwallpaper --center $XDG_CONFIG_HOME/wallpaper/bg 
+    betterlockscreen -u $XDG_CONFIG_HOME/wallpaper/lock &>/dev/null &
 }
 
 main "$@"
