@@ -36,7 +36,7 @@ set.splitbelow = true
 set.cursorline = true
 set.signcolumn = 'yes'
 set.title = true
-set.ch = 0
+-- set.cmdheight = 0
 set.winbar = '%=%m %f'
 
 vim.cmd([[

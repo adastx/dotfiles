@@ -44,14 +44,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "kyazdani42/nvim-tree.lua",
-        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
-        config = function()
-            require "setup.nvim-tree"
-        end,
-    }
-
-    use {
         "lukas-reineke/indent-blankline.nvim",
         event = { "BufRead", "BufNewFile" },
         config = function()
