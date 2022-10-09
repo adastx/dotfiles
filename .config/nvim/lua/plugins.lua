@@ -137,8 +137,10 @@ return require('packer').startup(function(use)
 
     use {
         "tpope/vim-fugitive",
-        config = "vim.cmd [[call FugitiveDetect('~/.cfg')]]",
         cmd = { 'G', 'Ggrep' },
+        config = function()
+            require "setup.fugitive"
+        end,
     }
 
     use {
