@@ -1,38 +1,14 @@
 #!/bin/bash
 
 main () {
-    if [ ! -n "$1" ]; then
-        help
-    fi
-
-    while [ -n "$1" ]; do # while loop starts
-        case "$1" in
-            -d) 
-                dock; break ;;
-            -u) 
-                undock; break ;;
-            -h|--help)
-                help ;;
-            *) 
-                usage; echo "error: unrecognized arguments: $1" ; exit 1 ;;
-        esac
-        shift
-    done
-}
-
-usage () {
-    echo "usage: dock [options]"
-}
-
-help () {
-    usage
-    echo
-    echo "Dock or undock laptop"
-    echo
-    echo "options:"
-    echo "  -h, --help            show this help message and exit"
-    echo "  -d                    dock"
-    echo "  -u                    undock"
+    case "$1" in
+        -d) 
+            dock ;; 
+        -u) 
+            undock ;;
+        *) 
+            echo "usage: dock [-du]";; 
+    esac
 }
 
 dock () { 
@@ -40,7 +16,7 @@ dock () {
         echo "error: HDMI not connected"; exit 1
     fi
 
-    barpos -b
+    barpos bottom
     xrandr --output HDMI-1 --mode 2560x1440 --rate 70 --primary
     xrandr --output eDP-1 --off 
     xwallpaper --center $XDG_CONFIG_HOME/wallpaper/bg 
@@ -48,7 +24,7 @@ dock () {
 }
 
 undock () {
-    barpos -t
+    barpos top
     xrandr --output eDP-1 --mode 1920x1080 --primary
     xrandr --output HDMI-1 --off
     xwallpaper --center $XDG_CONFIG_HOME/wallpaper/bg 
