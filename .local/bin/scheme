@@ -1,0 +1,58 @@
+#!/bin/bash
+
+main () {
+    case "$1" in
+        d|dark)
+            set_scheme dark ;;
+        l|light)
+            set_scheme light ;;
+        *)
+            echo "usage: scheme [dark|light]" ;;
+    esac
+}
+
+set_scheme () {
+    if [[ $1 == "dark" ]]; then
+        GTK_THEME=$(<$XDG_CONFIG_HOME/scheme/gtk-theme-dark)
+        QT_THEME=$(<$XDG_CONFIG_HOME/scheme/qt-theme-dark)
+        TERM_THEME=$(<$XDG_CONFIG_HOME/scheme/term-theme-dark)
+        FZF_COLOR=dark
+        PREFER_DARK="true"
+        PREFER_DARK_STR="prefer-dark"
+    else
+        GTK_THEME=$(<$XDG_CONFIG_HOME/scheme/gtk-theme-light)
+        QT_THEME=$(<$XDG_CONFIG_HOME/scheme/qt-theme-light)
+        TERM_THEME=$(<$XDG_CONFIG_HOME/scheme/term-theme-light)
+        FZF_COLOR=light
+        PREFER_DARK="false"
+        PREFER_DARK_STR="prefer-light"
+    fi 
+
+    sed -ir "s|^colors: .*$|colors: $TERM_THEME|" $XDG_CONFIG_HOME/alacritty/alacritty.yml
+
+    sed -ir "s|theme=.*$|theme=$QT_THEME|" \
+        $XDG_CONFIG_HOME/Kvantum/kvantum.kvconfig
+
+    sed -ir "s|gtk-theme-name=.*$|gtk-theme-name=\"$GTK_THEME\"|" \
+        $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+
+    sed -ir \
+        -e "s|gtk-theme-name=.*$|gtk-theme-name=$GTK_THEME|" \
+        -e "s|gtk-application-prefer-dark-theme=.*$|gtk-application-prefer-dark-theme=$PREFER_DARK|" \
+        $XDG_CONFIG_HOME/gtk-3.0/settings.ini \
+        $XDG_CONFIG_HOME/gtk-4.0/settings.ini
+
+    gsettings set org.gnome.desktop.interface color-scheme $PREFER_DARK_STR
+    gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME
+    gsettings set org.gnome.desktop.wm.preferences theme $GTK_THEME
+
+    echo -n $FZF_COLOR > $XDG_CONFIG_HOME/scheme/fzf-color
+
+    # todo: 
+    #   - send nvim clients theme update
+    #   - delta ?
+    #   - restart firefox ?
+    #   - restart thunderbird ?
+}
+
+main "$@"
