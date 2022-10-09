@@ -14,7 +14,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
 bindsym $mod+Shift+s exec --no-startup-id $HOME/.local/bin/screenshot -s
 bindsym Print exec --no-startup-id $HOME/.local/bin/screenshot
-bindsym $mod+Shift+c exec --no-startup-id $HOME/.local/bin/picom-toggle
+bindsym $mod+Shift+c exec --no-startup-id $HOME/.local/bin/comptoggle
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
@@ -192,4 +192,4 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 ##### Exec
-exec_always --no-startup-id $HOME/.local/bin/polybar-launch
+exec_always --no-startup-id $HOME/.local/bin/barlaunch

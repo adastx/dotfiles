@@ -40,7 +40,7 @@ unclutter -b &
 nextcloud --background &
 xwallpaper --center $XDG_CONFIG_HOME/wallpaper/bg &
 betterlockscreen -u $XDG_CONFIG_HOME/wallpaper/lock &
-~/.local/bin/picom-toggle &
+~/.local/bin/comptoggle &
 ~/.local/bin/rate &
 ~/.local/bin/screensaver &
 exec i3
