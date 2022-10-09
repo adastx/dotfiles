@@ -13,7 +13,9 @@ if ! updates_aur=$(paru -Qum 2> /dev/null | wc -l); then
     updates_aur=0
 fi
 
-updates=$((updates_arch + updates_aur))
+aur_ignored=$(aurignored | wc -l)
+
+updates=$((updates_arch + updates_aur - $aur_ignored))
 
 if [ "$updates" -gt 0 ]; then
     echo "  $updates"
