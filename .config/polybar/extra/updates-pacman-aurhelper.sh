@@ -13,7 +13,7 @@ if ! updates_aur=$(paru -Qum 2> /dev/null | wc -l); then
     updates_aur=0
 fi
 
-aur_ignored=$(aurignored | wc -l)
+aur_ignored=$($HOME/.local/bin/aurignored | wc -l)
 
 updates=$((updates_arch + updates_aur - $aur_ignored))
 
