@@ -1,6 +1,13 @@
 use_nerdfont = true
 flip_status_indicators = true
 
+[keybindings]
+"Shift+d" = "delete"
+"d" = "move down 5"
+"u" = "move up 5"
+"g" = "move top"
+"Shift+g" = "move bottom"
+
 [theme]
 title = "blue"
 playing_selected = "light blue"
