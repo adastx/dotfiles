@@ -1,6 +1,6 @@
 #!/bin/sh
 
-polybar-msg cmd quit
+polybar-msg cmd quit >/dev/null
 
 echo "---" >> /tmp/polybar.log 
 polybar bar1 --reload >> /tmp/polybar.log 2>&1 & disown
