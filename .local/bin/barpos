@@ -41,19 +41,19 @@ help () {
 }
 
 toggle () {
-    if grep -q "$BOTTOM" $BAR_CFG; then
-        sed -i "s/$BOTTOM/$TOP/" $BAR_CFG
+    if grep -Eq "^$BOTTOM$" $BAR_CFG; then
+        top
     else
-        sed -i "s/$TOP/$BOTTOM/" $BAR_CFG
+        bottom
     fi
 }
 
 bottom () {
-    sed -ir "s/bottom = .*$/bottom = true/" $BAR_CFG
+    sed -ir "s|^bottom = .*$|bottom = true|" $BAR_CFG
 }
 
 top () {
-    sed -ir "s/bottom = .*$/bottom = false/" $BAR_CFG
+    sed -ir "s|^bottom = .*$|bottom = false|" $BAR_CFG
 }
 
 main "$@"
