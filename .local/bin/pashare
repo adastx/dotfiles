@@ -10,7 +10,7 @@ main () {
         stop)
             stop ;;
         *)
-            echo "usage: pashare [start|stop]" >&2
+            echo "usage: pashare [start|stop]"
             ;;
     esac
 }
@@ -18,7 +18,7 @@ main () {
 start () {
     stop &>/dev/null
 
-    DEST=$(cat $XDG_CONFIG_HOME/pashare/dest)
+    DEST=$(<$XDG_CONFIG_HOME/pashare/dest)
 
     pactl load-module module-null-sink \
         sink_name=rtp \
