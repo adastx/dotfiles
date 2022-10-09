@@ -44,38 +44,38 @@ window:
   padding:
     x: 6
     y: 6
-    # Spread additional padding evenly around the terminal content.
-    dynamic_padding: false
-    # Window decorations
-    #
-    # Values for `decorations`:
-    #     - full: Borders and title bar
-    #     - none: Neither borders nor title bar
-    #
-    # Values for `decorations` (macOS only):
-    #     - transparent: Title bar, transparent background and title bar buttons
-    #     - buttonless: Title bar, transparent background and no title bar buttons
-    #decorations: full
-    # Startup Mode (changes require restart)
-    #
-    # Values for `startup_mode`:
-    #   - Windowed
-    #   - Maximized
-    #   - Fullscreen
-    #
-    # Values for `startup_mode` (macOS only):
-    #   - SimpleFullscreen
-    #startup_mode: Windowed
-    # Window title
-    #title: Alacritty
-    # Allow terminal applications to change Alacritty's window title.
-    dynamic_title: true
-    # Window class (Linux/BSD only):
-    #class:
-    # Application instance name
-    #instance: Alacritty
-    # General application class
-    #general: Alacritty
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  #decorations: full
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  #startup_mode: Windowed
+  # Window title
+  #title: Alacritty
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+  # Window class (Linux/BSD only):
+  #class:
+  # Application instance name
+  #instance: Alacritty
+  # General application class
+  #general: Alacritty
   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
@@ -153,34 +153,47 @@ font:
   # If `true`, bold text is drawn using the bright color variants.
   draw_bold_text_with_bright_colors: true
 
-colors:
-  primary:
-    background: '#282c34'
-    foreground: '#bbc2cf'
-  cursor:
-     text: CellBackground
-     cursor: CellForeground
-  selection:
-    text: CellForeground
-    background: '#3e4451'
-  normal:
-    black:   '#1c1f24'
-    red:     '#ff6c6b'
-    green:   '#98be65'
-    yellow:  '#da8548'
-    blue:    '#51afef'
-    magenta: '#c678dd'
-    cyan:    '#5699af'
-    white:   '#bbc2cf'
-  bright:
-    black:   '#5b6268'
-    red:     '#da8548'
-    green:   '#4db5bd'
-    yellow:  '#ecbe7b'
-    blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
-    magenta: '#a9a1e1'
-    cyan:    '#46d9ff'
-    white:   '#dfdfdf'
+schemes:
+  one_light: &light
+    primary:
+      background: '#fafafa'
+      foreground: '#383a42'
+    cursor:
+      text:       CellBackground
+      cursor:     '#526eff' # syntax-cursor-color
+    selection:
+      text:       CellForeground
+      background: '#e5e5e6' # syntax-selection-color
+    normal:
+      black:      '#696c77' # mono-2
+      red:        '#e45649' # red 1
+      green:      '#50a14f'
+      yellow:     '#c18401' # orange 2
+      blue:       '#4078f2'
+      magenta:    '#a626a4'
+      cyan:       '#0184bc'
+      white:      '#383a42' # mono-3
+  one_dark: &dark
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text:       CellBackground
+      cursor:     '#528bff' # syntax-cursor-color
+    selection:
+      text:       CellForeground
+      background: '#3e4451' # syntax-selection-color
+    normal:
+      black:      '#5c6370' # mono-3
+      red:        '#e06c75' # red 1
+      green:      '#98c379'
+      yellow:     '#e5c07b' # orange 2
+      blue:       '#61afef'
+      magenta:    '#c678dd'
+      cyan:       '#56b6c2'
+      white:      '#bbc2cf' # mono-2
+
+colors: *dark
 
 #selection:
 # This string contains all characters that are used as separators for
