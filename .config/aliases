@@ -28,13 +28,11 @@ alias ca='config add'
 alias cu='config add -u'
 alias cdf='config diff'
 alias clg='config log --oneline --decorate --all --graph'
-alias cvim="GIT_DIR=$HOME/.cfg GIT_WORK_TREE=$HOME nvim"
 
 alias shrc="nvim $HOME/.bashrc"
 alias vars="nvim $HOME/.bash_profile"
 alias wmrc="nvim $XDG_CONFIG_HOME/i3/config"
-alias vimrc="GIT_DIR=$HOME/.cfg GIT_WORK_TREE=$HOME \
-    nvim --cmd ':cd $XDG_CONFIG_HOME/nvim/ | edit lua/plugins.lua'"
+alias vimrc="cd $XDG_CONFIG_HOME/nvim; nvim"
 alias initrc="nvim $XDG_CONFIG_HOME/X11/xinitrc"
 alias barconf="nvim $XDG_CONFIG_HOME/polybar/config.ini"
 alias aliases="nvim $XDG_CONFIG_HOME/aliases"

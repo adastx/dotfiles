@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
         event = { "BufRead", "BufNewFile" },
         wants = "plenary.nvim",
         config = function()
-            require('gitsigns').setup()
+            require 'setup.gitsigns'
         end,
     }
 
@@ -133,6 +133,12 @@ return require('packer').startup(function(use)
     use {
         "tpope/vim-surround",
         event = { "BufRead", "BufNewFile" },
+    }
+
+    use {
+        "tpope/vim-fugitive",
+        config = "vim.cmd [[call FugitiveDetect('~/.cfg')]]",
+        cmd = { 'G', 'Ggrep' },
     }
 
     use {

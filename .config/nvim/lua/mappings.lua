@@ -48,7 +48,7 @@ map('n', '<leader>xN', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
 map('n', '<leader>xx', '<cmd>Telescope lsp_code_actions<cr>', opts)
 map('n', '<leader>xX', '<cmd>Telescope lsp_range_code_actions<cr>', opts)
 
-map('n', '<leader>co', ':copen<CR>', opts)
+map('n', '<leader>co', ':cwindow<CR>', opts)
 map('n', ']q', ':cnext<CR>', opts)
 map('n', '[q', ':cprevious<CR>', opts)
 map('n', '[Q', ':cfirst<CR>', opts)
