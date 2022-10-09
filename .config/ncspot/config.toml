@@ -2,11 +2,13 @@ use_nerdfont = true
 flip_status_indicators = true
 
 [keybindings]
-"Shift+d" = "delete"
+"q" = "back"
 "d" = "move down 5"
 "u" = "move up 5"
 "g" = "move top"
 "Shift+g" = "move bottom"
+"Shift+d" = "delete"
+"Shift+q" = "quit"
 
 [theme]
 title = "blue"
