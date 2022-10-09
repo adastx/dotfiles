@@ -2,19 +2,13 @@ use_nerdfont = true
 flip_status_indicators = true
 
 [theme]
-primary = "light white"
-secondary = "light black"
-title = "green"
-playing = "green"
-playing_selected = "light green"
-playing_bg = "black"
+title = "blue"
+playing_selected = "light blue"
+playing = "blue"
 highlight = "light white"
-highlight_bg = "#484848"
+highlight_bg = "#333640"
 error = "light white"
 error_bg = "red"
-statusbar = "black"
-statusbar_progress = "green"
-statusbar_bg = "green"
 cmdline = "light white"
 cmdline_bg = "black"
 search_match = "light red"
