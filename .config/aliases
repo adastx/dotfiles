@@ -53,6 +53,6 @@ complete -F _todo t
 complete -F _sudo doas
 
 function fzf () { 
-    command fzf --color=$(cat /home/adam/.config/color) "$@"; 
+    command fzf --color=$(<$XDG_CONFIG_HOME/scheme/fzf-color) "$@"; 
 }; 
 export -f fzf
