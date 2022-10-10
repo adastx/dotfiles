@@ -4,7 +4,7 @@ BAR_CFG=$XDG_CONFIG_HOME/polybar/config.ini
 
 main () {
     if [ ! -n "$1" ]; then
-        toggle
+        toggle ; exit 0
     fi
 
     case "$1" in

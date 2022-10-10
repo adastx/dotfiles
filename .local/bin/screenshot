@@ -2,12 +2,12 @@
 
 main () {
     if [ ! -n "$1" ]; then
-        print_screen
+        print_screen ; exit 0
     fi
 
     case "$1" in
         -s) 
-            screenshot-select ;;
+            selection ;;
         *) 
             echo "usage: screenshot [-s]" ;;
     esac
@@ -17,7 +17,7 @@ print_screen () {
     scrot -q 100 -e 'xclip -selection c -t image/png < $f; mv $f ~/Pictures/screenshots/'
 }
 
-screenshot-select () {
+selection () {
     sleep 0.2
     scrot -l mode=edge -i -s -e 'xclip -sel clip -t image/png $f; mv $f ~/Pictures/screenshots/' 
 }
