@@ -538,7 +538,7 @@ colors: *dark
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
 #- { key: Paste,                                       action: Paste          }
 #- { key: Copy,                                        action: Copy           }
 #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -562,6 +562,8 @@ colors: *dark
 #- { key: F,      mods: Control,       mode: Vi|~Search, action: ScrollPageDown          }
 #- { key: U,      mods: Control,       mode: Vi|~Search, action: ScrollHalfPageUp        }
 #- { key: D,      mods: Control,       mode: Vi|~Search, action: ScrollHalfPageDown      }
+- { key: U,      mode: Vi|~Search, action: ScrollHalfPageUp        }
+- { key: D,      mode: Vi|~Search, action: ScrollHalfPageDown      }
 #- { key: Y,                           mode: Vi|~Search, action: Copy                    }
 #- { key: Y,                           mode: Vi|~Search, action: ClearSelection          }
 #- { key: Copy,                        mode: Vi|~Search, action: ClearSelection          }
@@ -579,7 +581,7 @@ colors: *dark
 #- { key: Left,                        mode: Vi|~Search, action: Left                    }
 #- { key: Right,                       mode: Vi|~Search, action: Right                   }
 #- { key: Key0,                        mode: Vi|~Search, action: First                   }
-#- { key: Key4,   mods: Shift,         mode: Vi|~Search, action: Last                    }
+- { key: 5,   mods: Shift,         mode: Vi|~Search, action: Last                    }
 #- { key: Key6,   mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
 #- { key: H,      mods: Shift,         mode: Vi|~Search, action: High                    }
 #- { key: M,      mods: Shift,         mode: Vi|~Search, action: Middle                  }
