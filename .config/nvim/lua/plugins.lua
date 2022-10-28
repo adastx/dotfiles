@@ -52,6 +52,14 @@ return require('packer').startup(function(use)
     }
 
     use {
+        "kyazdani42/nvim-tree.lua",
+        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+        config = function()
+            require "setup.nvim-tree"
+        end,
+    }
+
+    use {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },
         config = function()
@@ -72,15 +80,18 @@ return require('packer').startup(function(use)
     use {
         "neovim/nvim-lspconfig",
         event = { "BufRead", "BufNewFile" },
-    }
-
-    use {
-        "williamboman/nvim-lsp-installer",
-        after = "nvim-lspconfig",
         config = function()
             require "setup.lspconfig"
         end,
     }
+
+    -- use {
+    --     "williamboman/nvim-lsp-installer",
+    --     after = "nvim-lspconfig",
+    --     config = function()
+    --         require "setup.lspconfig"
+    --     end,
+    -- }
 
     use {
         "ray-x/lsp_signature.nvim",
