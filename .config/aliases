@@ -1,6 +1,10 @@
 #!/bin/bash
 
+alias ..="cd .."
+alias ...="cd ../../"
+
 alias reload="source $HOME/.bash_profile"
+alias rld="reload"
 
 alias vim="nvim"
 alias sudo='doas'
