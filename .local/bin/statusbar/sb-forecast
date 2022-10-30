@@ -1,0 +1,48 @@
+#!/bin/bash
+
+LOCATION=$(<$XDG_CONFIG_HOME/forecast/location)
+
+main () {
+    case "$1" in
+        -b|--browser)
+            xdg-open https://wttr.in/$LOCATION
+            exit 0 ;;
+    esac
+
+    res=$(curl -sf wttr.in/$LOCATION?format="%x+%t") || exit 1
+    arr=($res)
+
+    icon=$(condition_icon ${arr[0]})
+    temp=$(temperature ${arr[1]})
+    echo $icon $temp
+}
+
+condition_icon () {
+    case "$1" in
+        'mm') echo     ;; 
+        '=') echo      ;;  
+        '///') echo    ;;    
+        '//') echo     ;;
+        '**') echo     ;;
+        '*/*') echo    ;;
+        '/') echo      ;;
+        '.') echo      ;;
+        'x') echo      ;;
+        'x/') echo     ;;
+        '*') echo      ;;
+        '*/') echo     ;;
+        'm') echo      ;;
+        'o') echo      ;;
+        '/!/') echo    ;;
+        '!/') echo     ;;
+        '*!*') echo    ;;
+        'mmm') echo    ;;
+        *) echo ? ;;
+    esac
+}
+
+temperature () {
+    echo $1 | sed 's/+//' | sed 's/C//'
+}
+
+main "$@"

@@ -18,5 +18,5 @@ aur_ignored=$($HOME/.local/bin/aurignored | wc -l)
 updates=$((updates_arch + updates_aur - $aur_ignored))
 
 if [ "$updates" -gt 0 ]; then
-    echo "  $updates"
+    echo " $updates"
 fi
