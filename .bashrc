@@ -24,4 +24,4 @@ source $XDG_CONFIG_HOME/aliases
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 
-pfetch
+# pfetch

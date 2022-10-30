@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 BAR_CFG=$XDG_CONFIG_HOME/polybar/config.ini 
 

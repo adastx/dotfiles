@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 alias ..="cd .."
 alias ...="cd ../../"
@@ -42,6 +42,7 @@ alias barconf="nvim $XDG_CONFIG_HOME/polybar/config.ini"
 alias aliases="nvim $XDG_CONFIG_HOME/aliases"
 
 alias mixer="pulsemixer"
+alias weather="curl wttr.in/$(<.config/forecast/location)"
 
 _completion_loader git
 _completion_loader exa
