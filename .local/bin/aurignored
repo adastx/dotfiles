@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Get list of ignored pkgs
-function ignored() {
+ignored() {
     pkgs="$(grep IgnorePkg /etc/pacman.conf | sed -e 's/IgnorePkg =//' -e 's/#.*//')"
     grps="$(grep IgnoreGroup /etc/pacman.conf | sed -e 's/IgnoreGroup =//' -e 's/#.*//')"
-    [[ -n $grps ]] && pkgs="$pkgs $(pacman -Sgq $grps)"
+    [ -n "$grps" ] && pkgs="$pkgs $(pacman -Sgq "$grps")"
 
     echo -n "$pkgs" | tail -n -1
 }
@@ -12,5 +12,5 @@ function ignored() {
 # Return only AUR pkgs
 for pkg in $(ignored)
 do
-    pacman -Si $pkg &>/dev/null || echo "$pkg"
+    pacman -Si "$pkg" >/dev/null 2>&1 || echo "$pkg"
 done

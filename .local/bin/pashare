@@ -15,9 +15,9 @@ main () {
 }
 
 start () {
-    stop &>/dev/null
+    stop >/dev/null 2>&1
 
-    DEST=$(<$XDG_CONFIG_HOME/pashare/dest)
+    DEST=$(cat $XDG_CONFIG_HOME/pashare/dest)
 
     pactl load-module module-null-sink \
         sink_name=rtp \

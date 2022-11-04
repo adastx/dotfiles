@@ -12,17 +12,17 @@ main () {
 }
 
 set_scheme () {
-    if [[ $1 == "dark" ]]; then
-        GTK_THEME=$(<"$XDG_CONFIG_HOME"/scheme/gtk-theme-dark)
-        QT_THEME=$(<"$XDG_CONFIG_HOME"/scheme/qt-theme-dark)
-        TERM_THEME=$(<"$XDG_CONFIG_HOME"/scheme/term-theme-dark)
+    if [ "$1" = "dark" ]; then
+        GTK_THEME=$(cat "$XDG_CONFIG_HOME/scheme/gtk-theme-dark")
+        QT_THEME=$(cat "$XDG_CONFIG_HOME/scheme/qt-theme-dark")
+        TERM_THEME=$(cat "$XDG_CONFIG_HOME/scheme/term-theme-dark")
         FZF_COLOR=dark
         PREFER_DARK="true"
         PREFER_DARK_STR="prefer-dark"
     else
-        GTK_THEME=$(<"$XDG_CONFIG_HOME"/scheme/gtk-theme-light)
-        QT_THEME=$(<"$XDG_CONFIG_HOME"/scheme/qt-theme-light)
-        TERM_THEME=$(<"$XDG_CONFIG_HOME"/scheme/term-theme-light)
+        GTK_THEME=$(cat "$XDG_CONFIG_HOME/scheme/gtk-theme-light")
+        QT_THEME=$(cat "$XDG_CONFIG_HOME/scheme/qt-theme-light")
+        TERM_THEME=$(cat "$XDG_CONFIG_HOME/scheme/term-theme-light")
         FZF_COLOR=light
         PREFER_DARK="false"
         PREFER_DARK_STR="prefer-light"
