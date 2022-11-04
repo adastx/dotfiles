@@ -43,4 +43,5 @@ betterlockscreen -u $XDG_CONFIG_HOME/wallpaper/lock &
 ~/.local/bin/comptoggle &
 ~/.local/bin/rate &
 ~/.local/bin/screensaver &
+sxhkd &
 exec i3

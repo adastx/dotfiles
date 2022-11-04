@@ -2,101 +2,27 @@ set $mod Mod4
 set $alt Mod1
 floating_modifier $mod
 
-##### Bindings 
-bindsym $mod+Shift+r reload
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+p exec --no-startup-id rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
-bindsym $mod+Escape exec --no-startup-id systemctl suspend
-bindsym $mod+Return exec alacritty
-bindsym $mod+b exec firefox
-bindsym $mod+f fullscreen toggle
-bindsym $mod+i exec --no-startup-id polybar-msg cmd toggle
-bindsym $mod+Shift+s exec --no-startup-id $HOME/.local/bin/screenshot -s
-bindsym Print exec --no-startup-id $HOME/.local/bin/screenshot
-bindsym $mod+Shift+c exec --no-startup-id $HOME/.local/bin/comptoggle
-
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -drun-display-format {name}
-bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons -drun-display-format {name}
-bindsym $alt+b exec --no-startup-id clipmenu -i -p clipmenu
-bindsym $mod+p exec --no-startup-id rofi-pass
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-
-# Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-# Focus the parent container
-bindsym $mod+a focus parent  
-# Focus tiled / floating windows
-bindsym $mod+Tab focus mode_toggle 
-
-# Window orientation
-bindsym $mod+g split h
-bindsym $mod+v split v
-bindsym $mod+t layout toggle tabbed splith splitv
-bindsym $mod+Shift+f floating toggle
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
 mode "Resize Mode" {
     bindsym h resize shrink width 6 px or 6 ppt
@@ -128,11 +54,7 @@ mode "Resize Mode" {
 }
 bindsym $mod+r mode "Resize Mode"
 
-
-##### Appearance
-
 font pango:Source Code Pro Medium 11
-
 gaps inner 5
 gaps outer 0
 default_border pixel 2
@@ -143,9 +65,6 @@ smart_gaps on
 hide_edge_borders smart
 popup_during_fullscreen smart
 focus_follows_mouse no
-
-
-##### Force floating windows
 
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
@@ -191,5 +110,4 @@ for_window [title="Steam Guard - Computer Authorization Required"] floating enab
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-##### Exec
 exec_always --no-startup-id $HOME/.local/bin/barlaunch

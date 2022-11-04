@@ -1,0 +1,95 @@
+super + shift + q
+    i3-msg kill
+
+super + shift + r
+    i3-msg restart
+
+super + shift + p
+    rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
+
+super + Escape
+    systemctl suspend
+
+super + Return
+    alacritty
+
+super + b
+    firefox
+
+super + f
+    i3-msg fullscreen toggle
+
+super + i
+    polybar-msg cmd toggle
+
+super + shift + s
+    $HOME/.local/bin/screenshot -s
+
+Print
+    $HOME/.local/bin/screenshot
+
+super + shift + c
+    $HOME/.local/bin/comptoggle 
+
+super + d 
+    rofi -show drun -show-icons -drun-display-format \{name\}
+
+alt + Tab
+    rofi -show window -show-icons -drun-display-format \{name\}
+
+alt + b 
+    clipmenu -i -p clipmenu
+
+super + p 
+    rofi-pass
+
+XF86AudioRaiseVolume  
+    pamixer -i 5
+
+XF86AudioLowerVolume  
+    pamixer -d 5
+
+XF86AudioMute  
+    pamixer -t
+
+XF86AudioPlay  
+    playerctl play-pause
+
+XF86AudioNext  
+    playerctl next
+
+XF86AudioPrev  
+    playerctl previous
+
+XF86MonBrightnessUp  
+    xbacklight -inc 5
+
+XF86MonBrightnessDown  
+    xbacklight -dec 5
+
+super + {Left,Down,Up,Right}
+    i3-msg focus {left,down,up,right}
+
+super + {h,j,k,l}
+    i3-msg focus {left,down,up,right}
+
+super + shift + {Left,Down,Up,Right}
+    i3-msg move {left,down,up,right}
+
+super + shift + {h,j,k,l}
+    i3-msg move {left,down,up,right}
+
+super + Tab
+    i3-msg focus mode_toggle
+
+super + g
+    i3-msg split h
+
+super + v
+    i3-msg split v
+
+super + t
+    i3-msg layout toggle tabbed splith splitv
+
+super + shift + f
+    i3-msg floating toggle
