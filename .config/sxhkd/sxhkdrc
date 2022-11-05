@@ -5,16 +5,16 @@ super + shift + r
     i3-msg restart
 
 super + shift + p
-    rofi -show p -modi "p:rofi-power-menu --choices=shutdown/reboot/suspend/logout --confirm="
+    $HOME/.local/bin/dmenu/dm-power 
 
 super + Escape
     systemctl suspend
 
 super + Return
-    alacritty
+    i3-msg exec alacritty
 
 super + b
-    firefox
+    i3-msg exec firefox
 
 super + f
     i3-msg fullscreen toggle
@@ -32,16 +32,16 @@ super + shift + c
     $HOME/.local/bin/comptoggle 
 
 super + d 
-    rofi -show drun -show-icons -drun-display-format \{name\}
-
-alt + Tab
-    rofi -show window -show-icons -drun-display-format \{name\}
+    dmenu_run -p 'Run:' -b -i -fn 'JetBrainsMono NerdFont:size=11'
 
 alt + b 
-    clipmenu -i -p clipmenu
+    clipmenu -p 'Clipboard:' -b -i -fn 'JetBrainsMono NerdFont:size=11'
 
 super + p 
-    rofi-pass
+    $HOME/.local/bin/dmenu/dm-pass
+
+super + m 
+    i3-msg exec "alacritty -e pulsemixer"
 
 XF86AudioRaiseVolume  
     pamixer -i 5

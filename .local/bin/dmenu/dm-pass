@@ -1,0 +1,24 @@
+#!/bin/sh
+
+DMENU_CMD="dmenu -p 'Pass:' -b -i -fn 'JetBrainsMono Nerd Font:size=11'"
+
+entry=$(find "$PASSWORD_STORE_DIR" -name '*.gpg' |\
+    sed "s|$PASSWORD_STORE_DIR/||" |\
+    sed "s|.gpg||" |\
+    sort -n |\
+    eval "$DMENU_CMD") || exit 1
+
+details=$(pass "$entry") || exit 1
+user=$(echo "$details" | sed -n '2p' | sed 's|user: ||')
+pass=$(echo "$details" | head -n1)
+
+case "$(printf "autotype\npass\nuser" | eval "$DMENU_CMD")" in         
+    autotype) 
+        xdotool type "$user"
+        xdotool key Tab
+        xdotool type "$pass" ;;
+    pass) 
+        xdotool type "$pass" ;;
+    user) 
+        xdotool type "$user" ;;
+esac
