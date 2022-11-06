@@ -1,8 +1,8 @@
 #!/bin/sh
 
-case "$(printf "Shutdown\nRestart\nLogout\nSuspend\nLock" | dmenu \
-    -fn 'JetBrainsMono NerdFont:size=11' -i \
-    -b -p 'Power:')" in         
+DMENU_CMD="dmenu -p 'Power:' -b -i -fn 'JetBrainsMono Nerd Font:size=11'"
+
+case "$(printf "Shutdown\nRestart\nLogout\nSuspend\nLock" | eval "$DMENU_CMD")" in         
     Shutdown) exec systemctl poweroff;;         
     Restart) exec systemctl reboot;;         
     Logout) kill -HUP "$XDG_SESSION_PID";;         
