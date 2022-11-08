@@ -66,6 +66,11 @@ hide_edge_borders smart
 popup_during_fullscreen smart
 focus_follows_mouse no
 
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="About"] floating enable
+for_window [class="Nextcloud"] floating enable
 for_window [title="pulsemixer"] floating enable                       
 
 exec_always --no-startup-id $HOME/.local/bin/barlaunch
