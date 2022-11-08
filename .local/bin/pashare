@@ -17,7 +17,7 @@ main () {
 start () {
     stop >/dev/null 2>&1
 
-    DEST=$(cat $XDG_CONFIG_HOME/pashare/dest)
+    DEST=$(cat "$XDG_CONFIG_HOME/pashare/dest")
 
     pactl load-module module-null-sink \
         sink_name=rtp \
@@ -26,7 +26,8 @@ start () {
         channels=2 \
         rate=48000 >/dev/null
 
-    pactl load-module module-rtp-send source=rtp.monitor destination=$DEST port=4010 mtu=320 >/dev/null
+    pactl load-module module-rtp-send source=rtp.monitor destination="$DEST" \
+        port=4010 mtu=320 >/dev/null
 }
 
 stop () {

@@ -3,7 +3,7 @@
 BAR_CFG="$XDG_CONFIG_HOME/polybar/config.ini"
 
 main () {
-    if [ ! -n "$1" ]; then
+    if [ -z "$1" ]; then
         toggle ; exit 0
     fi
 
@@ -18,7 +18,7 @@ main () {
 }
 
 toggle () {
-    if grep -Eq "^bottom = true$" $BAR_CFG; then
+    if grep -Eq "^bottom = true$" "$BAR_CFG"; then
         top
     else
         bottom
@@ -26,11 +26,11 @@ toggle () {
 }
 
 bottom () {
-    sed -Ei "s|^bottom = .*$|bottom = true|" $BAR_CFG
+    sed -Ei "s|^bottom = .*$|bottom = true|" "$BAR_CFG"
 }
 
 top () {
-    sed -Ei "s|^bottom = .*$|bottom = false|" $BAR_CFG
+    sed -Ei "s|^bottom = .*$|bottom = false|" "$BAR_CFG"
 }
 
 main "$@"
