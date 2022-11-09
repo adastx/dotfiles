@@ -19,16 +19,16 @@ dock () {
     barpos bottom
     xrandr --output HDMI-1 --mode 2560x1440 --rate 70 --primary
     xrandr --output eDP-1 --off 
-    xwallpaper --center "$XDG_CONFIG_HOME/wallpaper/bg"
-    betterlockscreen -u "$XDG_CONFIG_HOME/wallpaper/lock" >/dev/null 2>&1 &
+    xwallpaper --center ~/.local/share/bg
+    betterlockscreen -u ~/.local/share/lock >/dev/null 2>&1 &
 }
 
 undock () {
     barpos top
     xrandr --output eDP-1 --mode 1920x1080 --primary
     xrandr --output HDMI-1 --off
-    xwallpaper --center "$XDG_CONFIG_HOME/wallpaper/bg"
-    betterlockscreen -u "$XDG_CONFIG_HOME/wallpaper/lock" >/dev/null 2>&1 &
+    xwallpaper --center ~/.local/share/bg
+    betterlockscreen -u ~/.local/share/lock >/dev/null 2>&1 &
 }
 
 main "$@"
