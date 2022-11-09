@@ -8,7 +8,7 @@ set icons
 set previewer ctpv
 set cleaner ctpvclear
 &ctpv -s $id
-cmd on-quit $ctpv -e $id
+&ctpvquit $id
 
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
